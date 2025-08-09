@@ -1,0 +1,273 @@
+/* CSS Variables for theming */
+:root {
+    --bg-primary: #0d0d0d;
+    --bg-secondary: #1a1a1a;
+    --bg-header: rgba(13, 13, 13, 0.8);
+    --bg-card: #2a2a2a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #gray-400;
+    --accent-red: #ef4444;
+    --accent-red-hover: #dc2626;
+    --border-color: #4b5563; /* gray-700 */
+    --progress-bar-bg: #333;
+}
+#logo-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+/* Light theme variables */
+html.light {
+    --bg-primary: #f0f2f5;
+    --bg-header: rgba(255, 255, 255, 0.1);
+    --bg-secondary: #ffffff;
+    --bg-card: #f9f9f9;
+    --text-primary: #020202;
+    --text-secondary: #gray-400;
+    --accent-red: #ef4444;
+    --accent-red-hover: #dc2626;
+    --border-color: #f0cbcb; /* gray-300 */
+    --progress-bar-bg: #e5e7eb;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Header styles */
+header {
+    background-color: var(--bg-header);
+    color: var(--text-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure header is above other content */
+    -webkit-backdrop-filter: blur(10px); /* Optional: adds a blur effect to the header background */
+    backdrop-filter: blur(10px); /* Standard property for compatibility */
+}
+
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-red);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-red-hover);
+}
+
+/* Hero section background blobs - simplified for CSS */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Ensure it's behind content */
+}
+
+.hero-bg::before,
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle, rgba(244, 59, 59, 0.3) 0%, rgba(239, 68, 68, 0) 70%);
+    border-radius: 50%;
+    filter: blur(0px); /* Adjust blur for desired effect */
+    opacity: 0.6;
+}
+
+.hero-bg::before {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 15%;
+    animation: moveBlob1 15s infinite alternate ease-in-out;
+}
+
+.hero-bg::after {
+    width: 400px;
+    height: 400px;
+    bottom: 20%;
+    right: 10%;
+    animation: moveBlob2 20s infinite alternate ease-in-out;
+}
+
+@keyframes moveBlob1 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(50px, -50px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes moveBlob2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-70px, 70px) scale(1.2); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Custom progress bar styling */
+.progress-bar {
+    height: 8px;
+    background-color: var(--progress-bar-bg);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--accent-red);
+    border-radius: 9999px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Timeline dot */
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-red);
+    border-radius: 50%;
+    position: absolute;
+    left: -6px; /* Half of width to center on line */
+    top: 0;
+    transform: translateY(-50%); /* Adjust to center vertically with text */
+    z-index: 10;
+}
+
+/* Ensure content is above blobs */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Scroll Animation Styles */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific styles for theme toggle button */
+#theme-toggle {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.35rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    width: 35px;
+    height: 35px;
+}
+#theme-toggle:hover {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+
+/* Adjust Tailwind classes to use CSS variables */
+.bg-\[\#1a1a1a\] { background-color: var(--bg-secondary); }
+.bg-\[\#2a2a2a\] { background-color: var(--bg-card); }
+.text-gray-300 { color: var(--text-primary); }
+.text-gray-400 { color: var(--text-secondary); }
+.text-gray-500 { color: var(--text-secondary); } /* For footer */
+.text-gray-600 { color: var(--border-color); }
+.text-gray-700 { color: var(--border-color); }
+.border-gray-600 { border-color: var(--border-color); }
+.border-gray-700 { border-color: var(--border-color); }
+.text-white { color: var(--text-primary); } /* Ensure white is primary text */
+.text-red-500 { color: var(--accent-red); }
+.text-red-5xl { color: var(--accent-red); }
+.text-white-5xl { color: var(--text-primary); }
+.hover\:text-red-500:hover { color: var(--accent-red-hover); }
+.hover\:border-red-500:hover { border-color: var(--accent-red-hover); }
+.bg-red-600 { background-color: var(--accent-red); }
+.hover\:bg-red-700:hover { background-color: var(--accent-red-hover); }
+
+
+#profile{
+    animation-name: updown;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes updown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+#animated-dot1{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--accent-red);
+    animation: pulse 2s infinite;
+    left: 95%;
+    top: 20%;
+}
+#animated-dot1{
+    animation-name: updowndot;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes updowndot {
+    0% { 
+        transform: translateY(-15px);
+        transform: translateX(10px);
+        background-color:#811717;
+    }
+    50% { 
+        transform: translateY(0); 
+        background-color:#ef4444;
+    }
+    100% { 
+        transform: translateY(-10px); 
+        transform: translateX(10px);
+        background-color:#7d1a1a; 
+    }
+}
+#animated-dot2{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--accent-red);
+    animation: pulse 2s infinite;
+    left: 75%;
+    bottom: 20%;
+}
+#animated-dot2{
+    animation-name: updowndot1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes updowndot1{
+    0% { 
+        transform: translateY(0);
+        background-color:#811717;
+    }
+    50% { 
+        transform: translateY(-15px); 
+        background-color:#ef4444;
+    }
+    100% { 
+        transform: translateY(0); 
+        background-color:#7d1a1a; 
+    }
+}

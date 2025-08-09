@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> <!-- Added 'dark' class as default theme -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Meche - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+    <!-- Hero Background Blobs -->
+    <div class="hero-bg"></div>
+
+    <div class="relative max-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8 content-center">
+        <!-- Header -->
+        <header id="header"
+            class="w-full flex justify-between items-center py-4 px-6 shadow-md fixed top-0 z-50 animate-on-scroll">
+            <div class="text-xl font-bold text-red-500"><img src="images/IMG_3846.PNG" alt="logo" width="40px"
+                    id="logo-img"></div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home"
+                    class=" border-gray-600 text-black-300 hover:text-red-500 transition-colors duration-300">Home</a>
+                <a href="#about"
+                    class="text-black-300 hover:text-red-500 transition-colors duration-300 border-red-900">About</a>
+                <a href="#journey" class="text-black-300 hover:text-red-500 transition-colors duration-300">Journey</a>
+                <a href="#skills" class="text-black-300 hover:text-red-500 transition-colors duration-300">Skills</a>
+                <a href="#projects"
+                    class="text-black-300 hover:text-red-500 transition-colors duration-300">Projects</a>
+                <a href="#contact" class="text-black-300 hover:text-red-500 transition-colors duration-300">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4 md:space-x-0">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="focus:outline-none ml-4" aria-label="Toggle theme">
+                    <i class="fas fa-sun text-xl" id="theme-icon"></i>
+                </button>
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-gray-300 hover:text-red-500 focus:outline-none ml-4"
+                    aria-label="Open mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home"
+            class="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-between py-20 px-6 mt-12 mb-24 animate-on-scroll">
+            <div class="text-center md:text-left md:w-2/3 z-10">
+                <p class="text-red-400">Hello, 'm</p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-black leading-tight">
+                    <span class="text-red-5xl">Sandeep </span> <br> <span class="text-white-5xl">Meche</span>
+                </h1>
+                <p class="text-red-500 text-xl sm:text-2xl mt-4 font-semibold">
+                    Full Stack Developer
+                </p>
+                <p class="text-gray-500 text-xl sm:text-2xl font-semibold">
+                    Building digital experiences that matter
+                </p>
+                <p class="text-gray-400 text-lg mt-6 max-w-md mx-auto md:mx-0">
+                    I'm a passionate Full Stack Developer with a knack for building robust and scalable web
+                    applications.
+                </p>
+                <div class="mt-10 flex justify-center md:justify-start space-x-4">
+                    <button
+                        class="bg-red-600 shadow-red-600/50 hover:bg-red-700 text-white font-semibold py-2 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+                        Download CV
+                    </button>
+                    <button
+                        class="border border-red-600 text-red-600 hover:border-red-500 hover:text-white hover:bg-red-600 font-semibold py-2 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Get In Touch
+                    </button>
+                </div>
+            </div>
+            <div
+                class="mt-12 md:mt-0 md:w-1/4 flex justify-center z-10 border-l-2 border-red-900 rounded-full shadow-MD">
+                <div id="profile"
+                    class="w-64 h-64 sm:w-64 sm:h-64 bg-gray-700 rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-2xl border-4 border-red-900 animate-pulse-slow">
+                    <img src="images/portfolio7.JPG" alt="sandip meche" class="w-full h-full rounded-full object-cover">
+                </div>
+
+            </div>
+            <div id="animated-dot1"></div>
+            <div id="animated-dot2"></div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-primary text-center mb-10 animate-pulse-slow">About <span
+                    class="text-red-500">Me</span></h2>
+            <p class="text-gray-400 text-lg text-center max-w-3xl mx-auto mb-12">
+                I'm a dedicated Full Stack Developer with expertise in crafting dynamic and user-friendly web
+                experiences. My journey in software development has equipped me with a strong foundation in both
+                front-end and back-end technologies, allowing me to build comprehensive solutions from concept to
+                deployment. I thrive on solving complex problems and continuously learning new technologies to deliver
+                high-quality, impactful software.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat Card 1 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">1+</div>
+                    <p class="text-gray-300 mt-2">Years Experience</p>
+                </div>
+                <!-- Stat Card 2 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">5+</div>
+                    <p class="text-gray-300 mt-2">Projects Completed</p>
+                </div>
+                <!-- Stat Card 3 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">3+</div>
+                    <p class="text-gray-300 mt-2">Happy Clients</p>
+                </div>
+                <!-- Stat Card 4 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">100%</div>
+                    <p class="text-gray-300 mt-2">Code Quality</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Journey Section (Experience & Education) -->
+        <section id="journey" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-primary text-center mb-10">My <span class="text-red-500">Journey</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Experience Column -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-briefcase text-red-500 mr-3"></i> Experience
+                    </h3>
+                    <div class="relative pl-6 border-l-2 border-gray-700 space-y-8">
+                        <!-- Experience Item 1 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2022 - Present</p>
+                            <h4 class="text-xl font-semibold text-primary">Senior Software Engineer</h4>
+                            <p class="text-red-400">Tech Solutions Inc. - New York, USA</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Led development of scalable web applications, mentored junior developers, and optimized
+                                database performance.
+                            </p>
+                        </div>
+                        <!-- Experience Item 2 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2019 - 2022</p>
+                            <h4 class="text-xl font-semibold text-primary">Full Stack Developer</h4>
+                            <p class="text-red-400">Web Innovations Co. - London, UK</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Developed and maintained full-stack applications using React, Node.js, and MongoDB.
+                            </p>
+                        </div>
+                        <!-- Experience Item 3 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2017 - 2019</p>
+                            <h4 class="text-xl font-semibold text-primary">Junior Web Developer</h4>
+                            <p class="text-red-400">Digital Agency - Berlin, Germany</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Assisted in front-end development, bug fixing, and website maintenance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Column -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap text-red-500 mr-3"></i> Education
+                    </h3>
+                    <div class="relative pl-6 border-l-2 border-gray-700 space-y-8">
+                        <!-- Education Item 1 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2024 - 2027</p>
+                            <h4 class="text-xl font-semibold text-primary">Bachelor of Science in Computing with AI
+                            </h4>
+                            <p class="text-red-400">Islington College - Kathmandu, NEPAL</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Specialized in Software Engineering and Artificial Intelligence.
+                            </p>
+                        </div>
+                        <!-- Education Item 2 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2021 - 2023</p>
+                            <h4 class="text-xl font-semibold text-primary">Adv. Diploma in Web Development</h4>
+                            <p class="text-red-400">STP Computer Education - Delhi, India</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Focused on web development, Full stack development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Skills Section -->
+        <section id="skills" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">My <span class="text-red-500">Skills</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Technical Skills -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                        <i class="fas fa-code text-red-500 mr-3"></i> Technical Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Skill 1 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">JavaScript</span>
+                                <span class="text-gray-300">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 2 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">React.js</span>
+                                <span class="text-gray-300">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 3 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Node.js</span>
+                                <span class="text-gray-300">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 4 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Python</span>
+                                <span class="text-gray-300">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 5 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">SQL/NoSQL</span>
+                                <span class="text-gray-300">70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                        <i class="fas fa-star text-red-500 mr-3"></i> Professional Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Skill 1 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Problem Solving</span>
+                                <span class="text-gray-300">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 2 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Teamwork</span>
+                                <span class="text-gray-300">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 3 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Communication</span>
+                                <span class="text-gray-300">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 4 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Creativity</span>
+                                <span class="text-gray-300">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 5 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Project Management</span>
+                                <span class="text-gray-300">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">Featured <span
+                    class="text-red-500">Projects</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <img src="https://placehold.co/600x400/333/FFF?text=Project+1" alt="Project 1"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-400 text-sm">
+                            Developed a full-stack e-commerce solution with secure payment gateway and user
+                            authentication.
+                        </p>
+                        <a href="#" class="text-red-500 hover:underline mt-4 inline-block">View Project <i
+                                class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <img src="https://placehold.co/600x400/333/FFF?text=Project+2" alt="Project 2"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Task Management App</h3>
+                        <p class="text-gray-400 text-sm">
+                            A collaborative task management application with real-time updates and notifications.
+                        </p>
+                        <a href="#" class="text-red-500 hover:underline mt-4 inline-block">View Project <i
+                                class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <img src="https://placehold.co/600x400/333/FFF?text=Project+3" alt="Project 3"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Portfolio Website Builder</h3>
+                        <p class="text-gray-400 text-sm">
+                            A drag-and-drop website builder for creating personalized online portfolios.
+                        </p>
+                        <a href="#" class="text-red-500 hover:underline mt-4 inline-block">View Project <i
+                                class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 4 -->
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <img src="https://placehold.co/600x400/333/FFF?text=Project+4" alt="Project 4"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Social Media Dashboard</h3>
+                        <p class="text-gray-400 text-sm">
+                            An analytics dashboard for tracking social media engagement and trends.
+                        </p>
+                        <a href="#" class="text-red-500 hover:underline mt-4 inline-block">View Project <i
+                                class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 5 -->
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <img src="https://placehold.co/600x400/333/FFF?text=Project+5" alt="Project 5"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Recipe Sharing App</h3>
+                        <p class="text-gray-400 text-sm">
+                            A community-driven platform for sharing and discovering recipes.
+                        </p>
+                        <a href="#" class="text-red-500 hover:underline mt-4 inline-block">View Project <i
+                                class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <!-- Project Card 6 -->
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <img src="https://placehold.co/600x400/333/FFF?text=Project+6" alt="Project 6"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Healthcare Management System</h3>
+                        <p class="text-gray-400 text-sm">
+                            A secure system for managing patient records and appointments.
+                        </p>
+                        <a href="#" class="text-red-500 hover:underline mt-4 inline-block">View Project <i
+                                class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">My <span class="text-red-500">Services</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-laptop-code text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Web Development</h3>
+                    <p class="text-gray-400 text-sm">
+                        Building responsive and high-performance websites and web applications.
+                    </p>
+                </div>
+                <!-- Service Card 2 -->
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-mobile-alt text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Mobile App Development</h3>
+                    <p class="text-gray-400 text-sm">
+                        Creating native and cross-platform mobile applications for iOS and Android.
+                    </p>
+                </div>
+                <!-- Service Card 3 -->
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-database text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Database Management</h3>
+                    <p class="text-gray-400 text-sm">
+                        Designing, implementing, and optimizing databases for efficient data storage.
+                    </p>
+                </div>
+                <!-- Service Card 4 -->
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-cloud text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Cloud Solutions</h3>
+                    <p class="text-gray-400 text-sm">
+                        Deploying and managing applications on cloud platforms like AWS, Azure, GCP.
+                    </p>
+                </div>
+                <!-- Service Card 5 -->
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-bug text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">API Development</h3>
+                    <p class="text-gray-400 text-sm">
+                        Building robust and secure RESTful APIs for various applications.
+                    </p>
+                </div>
+                <!-- Service Card 6 -->
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-chart-line text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">SEO Optimization</h3>
+                    <p class="text-gray-400 text-sm">
+                        Improving website visibility and ranking on search engines.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get In Touch Section -->
+        <section id="contact" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">Get In <span class="text-red-500">Touch</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Contact Info</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Email Me</p>
+                                <a href="mailto:sandeep.meche@example.com"
+                                    class="text-white hover:text-red-500 transition-colors duration-300">github301@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Call Me</p>
+                                <a href="tel:+1234567890"
+                                    class="text-white hover:text-red-500 transition-colors duration-300">+977
+                                    9807944252</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Location</p>
+                                <p class="text-white">Kathmandu, Nepal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Website</p>
+                                <a href="#"
+                                    class="text-white hover:text-red-500 transition-colors duration-300">sandeepmeche.netlify.app</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Follow Me</h3>
+                        <div class="flex space-x-6">
+                            <a href="#"
+                                class="text-gray-400 hover:text-red-500 transition-colors duration-300 text-3xl"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-red-500 transition-colors duration-300 text-3xl"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-red-500 transition-colors duration-300 text-3xl"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-red-500 transition-colors duration-300 text-3xl"><i
+                                    class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Send Me a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-400 text-sm font-bold mb-2">Your Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-400 text-sm font-bold mb-2">Your Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="john.doe@example.com">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-400 text-sm font-bold mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="Regarding a project...">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-400 text-sm font-bold mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="Hello Sandeep, I'd like to discuss..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full max-w-6xl text-center py-8 mt-12 border-t border-gray-700">
+            <p class="text-gray-500 text-sm">&copy; 2025 Sandeep Meche. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
