@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> <!-- Added 'dark' class as default theme -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Meche - Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Sandeep Meche, a Kathmandu-based graphic designer, video editor, and frontend development student.">
+    <meta name="author" content="Sandeep Meche">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:title" content="Sandeep Meche - Creative Portfolio">
+    <meta property="og:description"
+        content="Graphic design, video editing, and frontend development work by Sandeep Meche.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sandeepmeche.com.np">
+    <meta property="og:image" content="images/portfolio7.JPG">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="images/IMG_3846.PNG">
+    <!-- Local Tailwind utility snapshot -->
+    <link rel="stylesheet" href="tailwind-local.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+    <!-- Hero Background Blobs -->
+    <div class="hero-bg"></div>
+
+    <div class="relative min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8 content-center">
+        <!-- Header -->
+        <header id="header"
+            class="w-full flex justify-between items-center py-4 px-6 shadow-md fixed top-0 z-50 animate-on-scroll">
+            <a href="#home" class="brand-lockup" aria-label="Sandeep Meche home">
+                <img src="images/IMG_3846.PNG" alt="Sandeep Meche logo" id="logo-img">
+                <span>Sandeep Meche</span>
+            </a>
+            <nav id="site-nav" class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="video-editing.html" class="nav-link">Video</a>
+                <a href="design-gallery.html" class="nav-link">Design</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4 md:space-x-0">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-switch focus:outline-none ml-4" aria-label="Switch to light theme"
+                    type="button">
+                    <span class="theme-switch-track" aria-hidden="true">
+                        <i class="fas fa-sun theme-switch-sun"></i>
+                        <i class="fas fa-moon theme-switch-moon"></i>
+                        <span class="theme-switch-thumb" id="theme-icon"></span>
+                    </span>
+                </button>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-red-500 focus:outline-none ml-4"
+                    aria-label="Open mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home"
+            class="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-between py-20 px-6 mt-12 mb-24 animate-on-scroll">
+            <div class="text-center md:text-left md:w-2/3 z-10">
+                <p class="eyebrow">Hello, I'm</p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-black leading-tight">
+                    <span class="text-red-5xl">Sandeep </span> <br> <span class="text-white-5xl">Meche</span>
+                </h1>
+                <p class="text-red-500 text-xl sm:text-2xl mt-4 font-semibold">
+                    Graphic Designer | Video Editor | Frontend Student
+                </p>
+                <p class="text-gray-500 text-xl sm:text-2xl font-semibold">
+                    Designing visuals and building digital experiences
+                </p>
+                <p class="text-gray-400 text-lg mt-6 max-w-md mx-auto md:mx-0">
+                    I create sharp visual content, edit short-form videos, and build clean frontend interfaces with a
+                    strong eye for modern aesthetics.
+                </p>
+                <div class="mt-10 flex justify-center md:justify-start space-x-4">
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="assets/Sandeep_Meche_CV.pdf" class="btn btn-ghost" download>Download CV</a>
+                </div>
+                <div class="hero-badges" aria-label="Core tools and skills">
+                    <span>Photoshop</span>
+                    <span>DaVinci Resolve</span>
+                    <span>HTML/CSS</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+            <div
+                class="mt-12 md:mt-0 md:w-1/4 flex justify-center z-10 border-l-2 border-red-900 rounded-full shadow-md">
+                <div id="profile"
+                    class="w-64 h-64 sm:w-64 sm:h-64 bg-gray-700 rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-2xl border-4 border-red-900 animate-pulse-slow">
+                    <img src="images/portfolio7.JPG" alt="sandip meche" class="w-full h-full rounded-full object-cover">
+                </div>
+
+            </div>
+            <div id="animated-dot1"></div>
+            <div id="animated-dot2"></div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-primary text-center mb-10 animate-pulse-slow">About <span
+                    class="text-red-500">Me</span></h2>
+            <p class="text-gray-400 text-lg text-center max-w-3xl mx-auto mb-12">
+                I'm a creative undergraduate student based in Kathmandu, Nepal, with skills in graphic design, video
+                editing, photo editing, and frontend development. I enjoy turning ideas into polished digital visuals,
+                short-form content, and responsive web interfaces.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat Card 1 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">2024</div>
+                    <p class="text-gray-300 mt-2">Freelance Editing Since</p>
+                </div>
+                <!-- Stat Card 2 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">6+</div>
+                    <p class="text-gray-300 mt-2">Creative Tools</p>
+                </div>
+                <!-- Stat Card 3 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">3</div>
+                    <p class="text-gray-300 mt-2">Languages</p>
+                </div>
+                <!-- Stat Card 4 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">AI</div>
+                    <p class="text-gray-300 mt-2">Computing Student</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Journey Section (Experience & Education) -->
+        <section id="journey" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-primary text-center mb-10">My <span class="text-red-500">Journey</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Experience Column -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-briefcase text-red-500 mr-3"></i> Experience
+                    </h3>
+                    <div class="relative pl-6 border-l-2 border-gray-700 space-y-8">
+                        <!-- Experience Item 1 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">Contract - Kathmandu, Nepal</p>
+                            <h4 class="text-xl font-semibold text-primary">Event Coordinator</h4>
+                            <p class="text-red-400">Elite Events</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Coordinate visual production, digital logistics, promotional content, and on-site media
+                                assets for premium event experiences.
+                            </p>
+                        </div>
+                        <!-- Experience Item 2 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2023 - 2024</p>
+                            <h4 class="text-xl font-semibold text-primary">Freelance Video Editor</h4>
+                            <p class="text-red-400">Remote</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Edit short-form videos for Instagram, TikTok, and Facebook, plus thumbnails, banners,
+                                and social graphics.
+                            </p>
+                        </div>
+                        <!-- Experience Item 3 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2022 - 2023</p>
+                            <h4 class="text-xl font-semibold text-primary">Frontend UI Practice</h4>
+                            <p class="text-red-400">Personal Learning</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Build beginner frontend interfaces with HTML, CSS, JavaScript, and responsive layout
+                                concepts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Column -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap text-red-500 mr-3"></i> Education
+                    </h3>
+                    <div class="relative pl-6 border-l-2 border-gray-700 space-y-8">
+                        <!-- Education Item 1 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">Currently Studying</p>
+                            <h4 class="text-xl font-semibold text-primary">Bachelor of Science in Computing with AI
+                            </h4>
+                            <p class="text-red-400">Islington College - Kathmandu, NEPAL</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Specialized in Software Engineering and Artificial Intelligence.
+                            </p>
+                        </div>
+                        <!-- Education Item 2 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2024</p>
+                            <h4 class="text-xl font-semibold text-primary">+2 NEB</h4>
+                            <p class="text-red-400">Kanchanjunga English School</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Completed higher secondary education before starting undergraduate computing studies.
+                            </p>
+                        </div>
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2022</p>
+                            <h4 class="text-xl font-semibold text-primary">SEE</h4>
+                            <p class="text-red-400">Sigma English School</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Built the academic foundation for computing, design, and creative work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Skills Section -->
+        <section id="skills" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">My <span class="text-red-500">Skills</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Technical Skills -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                        <i class="fas fa-code text-red-500 mr-3"></i> Technical Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Graphic Design</span>
+                                <span class="text-gray-300">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Video Editing</span>
+                                <span class="text-gray-300">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Frontend Development</span>
+                                <span class="text-gray-300">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">JavaScript</span>
+                                <span class="text-gray-300">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Photo Editing</span>
+                                <span class="text-gray-300">70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>SQL</span>
+                            <span>PHP</span>
+                            <span>Python</span>
+                            <span>Next.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                        <i class="fas fa-star text-red-500 mr-3"></i> Professional Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Aesthetic Judgment</span>
+                                <span class="text-gray-300">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Communication</span>
+                                <span class="text-gray-300">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Creative Direction</span>
+                                <span class="text-gray-300">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Problem Solving</span>
+                                <span class="text-gray-300">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Event Coordination</span>
+                                <span class="text-gray-300">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>Photoshop</span>
+                            <span>Illustrator</span>
+                            <span>Canva</span>
+                            <span>DaVinci Resolve</span>
+                            <span>CapCut</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">Featured <span
+                    class="text-red-500">Projects</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-user-astronaut"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Personal Portfolio</h3>
+                        <p class="text-gray-400 text-sm">
+                            A responsive portfolio with theme switching, smooth scrolling, animated sections, and
+                            contact details.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="https://www.sandeepmeche.com.np" class="text-red-500 hover:underline mt-4 inline-block">View Project <i
+                                class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-film"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Short-Form Video Edits</h3>
+                        <p class="text-gray-400 text-sm">
+                            Social-first edits for Instagram, TikTok, and Facebook with pacing, captions, thumbnails,
+                            and visual polish.
+                        </p>
+                        <div class="project-tags">
+                            <span>DaVinci Resolve</span>
+                            <span>CapCut</span>
+                            <span>Thumbnails</span>
+                        </div>
+                        <a href="video-editing.html" class="text-red-500 hover:underline mt-4 inline-block">View Samples <i
+                                class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-palette"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Digital Design Assets</h3>
+                        <p class="text-gray-400 text-sm">
+                            Posters, banners, thumbnails, and aesthetic graphics for personal, freelance, and event
+                            content.
+                        </p>
+                        <div class="project-tags">
+                            <span>Photoshop</span>
+                            <span>Illustrator</span>
+                            <span>Canva</span>
+                        </div>
+                        <a href="design-gallery.html" class="text-red-500 hover:underline mt-4 inline-block">View Gallery <i
+                                class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-window-restore"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Frontend UI Concepts</h3>
+                        <p class="text-gray-400 text-sm">
+                            Academic interface experiments focused on clean layout, responsive design, and beginner
+                            frontend architecture.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Responsive UI</span>
+                        </div>
+                        <span class="project-status">Case study coming soon</span>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-layer-group"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Social Media Kit</h3>
+                        <p class="text-gray-400 text-sm">
+                            A reusable content kit for posts, story covers, thumbnails, and page banners.
+                        </p>
+                        <div class="project-tags">
+                            <span>Templates</span>
+                            <span>Brand Assets</span>
+                            <span>Social</span>
+                        </div>
+                        <span class="project-status">Sample set coming soon</span>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-microchip"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">IoT & Computing Practice</h3>
+                        <p class="text-gray-400 text-sm">
+                            Learning-focused computing work that connects software fundamentals, IoT curiosity, and AI
+                            studies.
+                        </p>
+                        <div class="project-tags">
+                            <span>IoT</span>
+                            <span>Python</span>
+                            <span>Computing</span>
+                        </div>
+                        <span class="project-status">Learning track</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Pages Section -->
+        <section id="samples" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-4">Portfolio <span
+                    class="text-red-500">Pages</span></h2>
+            <p class="text-gray-400 text-lg text-center max-w-3xl mx-auto mb-10">
+                Explore dedicated pages for short-form video editing samples and design gallery work.
+            </p>
+
+            <div class="page-card-grid">
+                <a href="video-editing.html" class="page-card">
+                    <span class="page-card-icon"><i class="fas fa-film"></i></span>
+                    <span class="current-label">Video Editing</span>
+                    <h3>Short-Form Video Editing</h3>
+                    <p>Reels, TikTok clips, Shorts, captions, pacing, and social-first editing samples.</p>
+                    <span class="page-card-link">Open video page <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="design-gallery.html" class="page-card">
+                    <span class="page-card-icon"><i class="fas fa-palette"></i></span>
+                    <span class="current-label">Design Gallery</span>
+                    <h3>Design Gallery</h3>
+                    <p>Posters, banners, thumbnails, social graphics, and visual design sample categories.</p>
+                    <span class="page-card-link">Open design page <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">My <span class="text-red-500">Services</span>
+            </h2>
+
+            <div class="services-banner">
+                <div>
+                    <span class="current-label">Available Services</span>
+                    <h3>Creative visuals and frontend support for your next digital project.</h3>
+                </div>
+                <div class="service-pills">
+                    <span>Graphic Design</span>
+                    <span>Video Editing</span>
+                    <span>Photo Editing</span>
+                    <span>Frontend Development</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-pen-nib text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Graphic Design</h3>
+                    <p class="text-gray-400 text-sm">
+                        Posters, banners, thumbnails, and social visuals with a clean modern look.
+                    </p>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-video text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Video Editing</h3>
+                    <p class="text-gray-400 text-sm">
+                        Short-form edits for Reels, TikTok, Facebook, recaps, and promotional clips.
+                    </p>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-image text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Photo Editing</h3>
+                    <p class="text-gray-400 text-sm">
+                        Color, composition, retouching, and visual refinement for digital presentation.
+                    </p>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-laptop-code text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Frontend Development</h3>
+                    <p class="text-gray-400 text-sm">
+                        Responsive web pages and UI concepts using HTML, CSS, JavaScript, and Next.js.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Currently Section -->
+        <section id="currently" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">Currently <span
+                    class="text-red-500">Building</span></h2>
+            <div class="current-grid">
+                <div>
+                    <span class="current-label">Learning</span>
+                    <h3>Computing with AI</h3>
+                    <p>Studying at Islington College while improving frontend development, Python, and practical AI
+                        fundamentals.</p>
+                </div>
+                <div>
+                    <span class="current-label">Creating</span>
+                    <h3>Visual Content</h3>
+                    <p>Designing thumbnails, banners, posters, and short-form social videos with an eye for modern
+                        visual trends.</p>
+                </div>
+                <div>
+                    <span class="current-label">Exploring</span>
+                    <h3>Frontend UI</h3>
+                    <p>Building cleaner web interfaces and learning how design decisions translate into better code.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get In Touch Section -->
+        <section id="contact" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">Get In <span class="text-red-500">Touch</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Contact Info</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Email Me</p>
+                                <a href="mailto:Sandipmeche6@gmail.com"
+                                    class="text-white hover:text-red-500 transition-colors duration-300">Sandipmeche6@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Call Me</p>
+                                <a href="tel:+9779807944252"
+                                    class="text-white hover:text-red-500 transition-colors duration-300">+977
+                                    9807944252</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Location</p>
+                                <p class="text-white">Kathmandu, Nepal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Website</p>
+                                <a href="https://www.sandeepmeche.com.np"
+                                    class="text-white hover:text-red-500 transition-colors duration-300">www.sandeepmeche.com.np</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Quick Links</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="assets/Sandeep_Meche_CV.pdf" download class="quick-link"><i
+                                    class="fas fa-file-arrow-down"></i> CV</a>
+                            <a href="mailto:Sandipmeche6@gmail.com" class="quick-link"><i
+                                    class="fas fa-envelope"></i> Email</a>
+                            <a href="https://www.sandeepmeche.com.np" class="quick-link"><i
+                                    class="fas fa-globe"></i> Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Send Me a Message</h3>
+                    <form id="contact-form" class="space-y-6" data-endpoint="http://127.0.0.1:8000/api/contact">
+                        <div>
+                            <label for="name" class="block text-gray-400 text-sm font-bold mb-2">Your Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-400 text-sm font-bold mb-2">Your Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="john.doe@example.com">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-400 text-sm font-bold mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="Regarding a project...">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-400 text-sm font-bold mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="Hello Sandeep, I'd like to discuss..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                            <span class="submit-label">Send Message</span>
+                        </button>
+                        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                        <p class="form-note">This opens a pre-filled email draft so your message goes directly to
+                            Sandeep if the Laravel backend is not running.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full max-w-6xl text-center py-8 mt-12 border-t border-gray-700">
+            <p class="text-gray-500 text-sm">&copy; 2026 Sandeep Meche. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Gallery - Sandeep Meche</title>
+    <meta name="description"
+        content="Design gallery by Sandeep Meche featuring poster, banner, thumbnail, and social media design sample categories.">
+    <meta name="theme-color" content="#0c0d10">
+    <link rel="icon" href="images/IMG_3846.PNG">
+    <link rel="stylesheet" href="tailwind-local.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+    <div class="hero-bg"></div>
+
+    <div class="relative min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8 content-center">
+        <header id="header"
+            class="w-full flex justify-between items-center py-4 px-6 shadow-md fixed top-0 z-50 animate-on-scroll">
+            <a href="index.html#home" class="brand-lockup" aria-label="Sandeep Meche home">
+                <img src="images/IMG_3846.PNG" alt="Sandeep Meche logo" id="logo-img">
+                <span>Sandeep Meche</span>
+            </a>
+            <nav id="site-nav" class="hidden md:flex space-x-8">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="video-editing.html" class="nav-link">Video</a>
+                <a href="design-gallery.html" class="nav-link active">Design</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4 md:space-x-0">
+                <button id="theme-toggle" class="theme-switch focus:outline-none ml-4" aria-label="Switch to light theme"
+                    type="button">
+                    <span class="theme-switch-track" aria-hidden="true">
+                        <i class="fas fa-sun theme-switch-sun"></i>
+                        <i class="fas fa-moon theme-switch-moon"></i>
+                        <span class="theme-switch-thumb" id="theme-icon"></span>
+                    </span>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-red-500 focus:outline-none ml-4"
+                    aria-label="Open mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="w-full flex flex-col items-center">
+            <section id="design-page" class="page-hero w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+                <div class="page-kicker"><i class="fas fa-palette"></i> Design Portfolio</div>
+                <h1 class="page-title">Design Gallery</h1>
+                <p class="page-subtitle">
+                    Poster layouts, banners, thumbnails, and social graphics with modern visual direction.
+                </p>
+                <div class="hero-badges">
+                    <span>Photoshop</span>
+                    <span>Illustrator</span>
+                    <span>Canva</span>
+                    <span>Thumbnails</span>
+                </div>
+            </section>
+
+            <section class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+                <div class="sample-heading">
+                    <div>
+                        <span class="current-label">Gallery</span>
+                        <h3>Design Sample Categories</h3>
+                    </div>
+                    <a href="index.html#contact" class="btn btn-secondary">Request Design</a>
+                </div>
+                <div class="design-gallery">
+                    <article class="design-card large">
+                        <img src="images/portfolio3.JPG" alt="Poster design sample placeholder">
+                        <div>
+                            <h4>Poster Layout</h4>
+                            <p>Bold hierarchy, clear subject focus, and balanced spacing for digital promotion.</p>
+                        </div>
+                    </article>
+                    <article class="design-card">
+                        <img src="images/portfolio.jpg" alt="Thumbnail design sample placeholder">
+                        <div>
+                            <h4>Thumbnail Style</h4>
+                            <p>High-contrast crop and clear focal point for short-form content.</p>
+                        </div>
+                    </article>
+                    <article class="design-card">
+                        <img src="images/portfolio6.JPG" alt="Banner design sample placeholder">
+                        <div>
+                            <h4>Banner Concept</h4>
+                            <p>Wide-format composition for profiles, pages, and campaigns.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-white text-center mb-10">Design <span
+                        class="text-red-500">Services</span></h2>
+                <div class="sample-grid">
+                    <article class="sample-card design-service-card">
+                        <span class="page-card-icon"><i class="fas fa-rectangle-ad"></i></span>
+                        <h4>Posters And Banners</h4>
+                        <p>Promotional layouts for events, pages, offers, and digital announcements.</p>
+                        <div class="project-tags">
+                            <span>Poster</span>
+                            <span>Banner</span>
+                            <span>Promo</span>
+                        </div>
+                    </article>
+                    <article class="sample-card design-service-card">
+                        <span class="page-card-icon"><i class="fas fa-image"></i></span>
+                        <h4>Thumbnails</h4>
+                        <p>Readable, high-impact thumbnails for videos and social media posts.</p>
+                        <div class="project-tags">
+                            <span>YouTube</span>
+                            <span>Reels</span>
+                            <span>Social</span>
+                        </div>
+                    </article>
+                    <article class="sample-card design-service-card">
+                        <span class="page-card-icon"><i class="fas fa-layer-group"></i></span>
+                        <h4>Social Media Kits</h4>
+                        <p>Reusable visual templates for posts, stories, highlights, and profile visuals.</p>
+                        <div class="project-tags">
+                            <span>Templates</span>
+                            <span>Posts</span>
+                            <span>Stories</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="w-full max-w-6xl text-center py-8 mt-12 border-t border-gray-700">
+            <p class="text-gray-500 text-sm">&copy; 2026 Sandeep Meche. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
