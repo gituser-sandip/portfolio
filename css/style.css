@@ -760,10 +760,58 @@ html.light .project-visual {
     margin-top: 0.5rem;
 }
 
+.github-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.github-project-card {
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    background:
+        radial-gradient(circle at 88% 14%, rgba(239, 68, 68, 0.2), transparent 24%),
+        linear-gradient(180deg, var(--bg-card), rgba(28, 32, 39, 0.82));
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.github-project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-red);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.github-project-card h4 {
+    color: var(--text-primary);
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.github-project-card p {
+    color: var(--text-secondary);
+}
+
+.github-project-card .web-project-actions {
+    margin-top: auto;
+}
+
 html.light .web-project-card {
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.92)),
         linear-gradient(135deg, rgba(225, 29, 72, 0.08), transparent);
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+html.light .github-project-card {
+    background:
+        radial-gradient(circle at 88% 14%, rgba(225, 29, 72, 0.14), transparent 24%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.92));
     box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
 }
 
@@ -1149,6 +1197,10 @@ textarea::placeholder {
         grid-template-columns: 1fr;
     }
 
+    .github-project-grid {
+        grid-template-columns: 1fr;
+    }
+
     #animated-dot1,
     #animated-dot2 {
         display: none;
@@ -1165,6 +1217,10 @@ textarea::placeholder {
     .page-card-grid,
     .reels-grid,
     .instagram-embed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .github-project-grid {
         grid-template-columns: 1fr;
     }
 }
