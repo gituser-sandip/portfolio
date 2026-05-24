@@ -681,6 +681,118 @@ html.light .project-visual {
     min-height: 260px;
 }
 
+.reels-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    background:
+        radial-gradient(circle at 86% 18%, rgba(239, 68, 68, 0.22), transparent 24%),
+        linear-gradient(135deg, rgba(239, 68, 68, 0.14), rgba(14, 165, 233, 0.08)),
+        linear-gradient(180deg, var(--bg-card), rgba(28, 32, 39, 0.78));
+}
+
+.reels-banner h2 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.reels-banner p {
+    color: var(--text-secondary);
+    max-width: 46rem;
+}
+
+.reels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.instagram-embed-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.instagram-embed-card {
+    min-height: 640px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    background:
+        linear-gradient(160deg, rgba(225, 29, 72, 0.12), rgba(245, 158, 11, 0.08), rgba(14, 165, 233, 0.08)),
+        var(--bg-card);
+}
+
+.instagram-embed-card .instagram-media {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 540px !important;
+    margin: 0 auto !important;
+}
+
+.reel-preview-card {
+    min-height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    color: var(--text-primary);
+    background:
+        linear-gradient(160deg, rgba(225, 29, 72, 0.2), rgba(245, 158, 11, 0.12), rgba(14, 165, 233, 0.1)),
+        var(--bg-card);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reel-preview-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-red);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.reel-preview-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1.2rem;
+    color: white;
+    background: linear-gradient(135deg, #f97316, #e11d48, #7c3aed);
+    font-size: 1.7rem;
+}
+
+.reel-preview-card h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.reel-preview-card p {
+    color: var(--text-secondary);
+}
+
+html.light .reels-banner,
+html.light .reel-preview-card,
+html.light .instagram-embed-card {
+    background:
+        linear-gradient(160deg, rgba(225, 29, 72, 0.12), rgba(245, 158, 11, 0.08), rgba(14, 165, 233, 0.08)),
+        rgba(255, 255, 255, 0.96);
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
 html.light .page-card {
     background:
         radial-gradient(circle at 80% 16%, rgba(225, 29, 72, 0.16), transparent 26%),
@@ -920,15 +1032,23 @@ textarea::placeholder {
     }
 
     .sample-heading,
-    .services-banner {
+    .services-banner,
+    .reels-banner {
         align-items: flex-start;
         flex-direction: column;
     }
 
     .sample-grid,
     .design-gallery,
-    .page-card-grid {
+    .page-card-grid,
+    .reels-grid,
+    .instagram-embed-grid {
         grid-template-columns: 1fr;
+    }
+
+    .instagram-embed-card {
+        min-height: 560px;
+        padding: 0.75rem;
     }
 
     .design-card.large {
@@ -952,7 +1072,9 @@ textarea::placeholder {
 
     .sample-grid,
     .design-gallery,
-    .page-card-grid {
+    .page-card-grid,
+    .reels-grid,
+    .instagram-embed-grid {
         grid-template-columns: 1fr;
     }
 }
