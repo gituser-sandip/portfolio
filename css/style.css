@@ -18,6 +18,8 @@
     height: 40px;
     border-radius: 50%;
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 /* Light theme variables */
 html.light {
@@ -89,16 +91,52 @@ header {
 }
 
 .brand-lockup {
+    position: relative;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0;
+    width: 50px;
+    height: 50px;
     color: var(--text-primary);
     font-weight: 800;
     letter-spacing: 0;
+    isolation: isolate;
 }
 
 .brand-lockup:hover #logo-img {
     transform: scale(1.08) rotate(-4deg);
+}
+
+.brand-lockup::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, rgba(239, 68, 68, 0.22), transparent 62%),
+        radial-gradient(circle, rgba(245, 158, 11, 0.12), transparent 70%);
+    box-shadow:
+        0 0 0 0 rgba(239, 68, 68, 0.28),
+        0 0 24px rgba(239, 68, 68, 0.25);
+    animation: logoPulse 2.4s ease-in-out infinite;
+    z-index: 0;
+}
+
+.brand-lockup::after {
+    content: '';
+    position: absolute;
+    right: -0.1rem;
+    top: 0.15rem;
+    width: 1rem;
+    height: 1.7rem;
+    background: linear-gradient(180deg, #facc15, var(--accent-red));
+    clip-path: polygon(56% 0, 100% 0, 66% 42%, 100% 42%, 28% 100%, 45% 55%, 8% 55%);
+    filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.75));
+    opacity: 0;
+    transform: rotate(15deg) scale(0.85);
+    animation: logoThunder 3.8s steps(1, end) infinite;
+    z-index: 3;
 }
 
 .nav-link {
@@ -185,6 +223,20 @@ header {
     filter: blur(2px);
     opacity: 0.85;
     animation: portraitHalo 7s linear infinite;
+}
+
+.hero-portrait-wrap::after {
+    content: '';
+    position: absolute;
+    width: 1.05rem;
+    height: 1.05rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, #facc15 0 18%, var(--accent-red) 42%, transparent 72%);
+    box-shadow:
+        0 0 18px rgba(250, 204, 21, 0.5),
+        0 0 28px rgba(239, 68, 68, 0.35);
+    animation: profileSparkMove 5.5s ease-in-out infinite;
+    z-index: 2;
 }
 
 .btn {
@@ -346,6 +398,65 @@ header {
 
 @keyframes portraitHalo {
     to { transform: rotate(360deg); }
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(0.92);
+        opacity: 0.6;
+        box-shadow:
+            0 0 0 0 rgba(239, 68, 68, 0.26),
+            0 0 22px rgba(239, 68, 68, 0.18);
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+        box-shadow:
+            0 0 0 8px rgba(239, 68, 68, 0),
+            0 0 30px rgba(239, 68, 68, 0.34);
+    }
+}
+
+@keyframes logoThunder {
+    0%, 72%, 100% {
+        opacity: 0;
+        transform: rotate(15deg) scale(0.82);
+    }
+    73% {
+        opacity: 1;
+        transform: rotate(8deg) scale(1.05);
+    }
+    75% {
+        opacity: 0;
+        transform: rotate(18deg) scale(0.9);
+    }
+    77% {
+        opacity: 0.9;
+        transform: rotate(12deg) scale(1);
+    }
+    80% {
+        opacity: 0;
+        transform: rotate(15deg) scale(0.82);
+    }
+}
+
+@keyframes profileSparkMove {
+    0%, 100% {
+        transform: translate(8.5rem, -1.5rem) scale(0.85);
+        opacity: 0.55;
+    }
+    28% {
+        transform: translate(10rem, 5.2rem) scale(1);
+        opacity: 1;
+    }
+    58% {
+        transform: translate(0.2rem, 9rem) scale(0.8);
+        opacity: 0.72;
+    }
+    82% {
+        transform: translate(-1.2rem, 1.2rem) scale(1.08);
+        opacity: 1;
+    }
 }
 
 @keyframes typeText {
@@ -1290,6 +1401,17 @@ textarea::placeholder {
         grid-template-columns: 1fr;
     }
 
+    .hero-portrait-wrap::before {
+        width: 17rem;
+        height: 17rem;
+    }
+
+    .hero-portrait-wrap::after {
+        width: 0.9rem;
+        height: 0.9rem;
+        animation-name: profileSparkMoveMobile;
+    }
+
     #animated-dot1,
     #animated-dot2 {
         display: none;
@@ -1297,10 +1419,13 @@ textarea::placeholder {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .brand-lockup::before,
+    .brand-lockup::after,
     .hero-title .text-red-5xl,
     .hero-reveal,
     .hero-typewriter span,
-    .hero-portrait-wrap::before {
+    .hero-portrait-wrap::before,
+    .hero-portrait-wrap::after {
         animation: none !important;
     }
 
@@ -1342,5 +1467,24 @@ textarea::placeholder {
     100% { 
         transform: translateY(0); 
         background-color:#7d1a1a; 
+    }
+}
+
+@keyframes profileSparkMoveMobile {
+    0%, 100% {
+        transform: translate(6.7rem, -1.1rem) scale(0.85);
+        opacity: 0.58;
+    }
+    28% {
+        transform: translate(7.5rem, 4.7rem) scale(1);
+        opacity: 1;
+    }
+    58% {
+        transform: translate(0.2rem, 7.5rem) scale(0.82);
+        opacity: 0.78;
+    }
+    82% {
+        transform: translate(-0.8rem, 1rem) scale(1.05);
+        opacity: 1;
     }
 }
