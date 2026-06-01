@@ -189,22 +189,20 @@ header {
 
 .hero-typewriter {
     display: inline-flex;
-    color: var(--text-primary);
-    font-size: 1.05rem;
-    font-weight: 800;
-    margin-top: 0.85rem;
-    min-height: 1.7rem;
+    color: inherit;
+    min-height: 1.75em;
 }
 
 .hero-typewriter span {
     display: inline-block;
+    width: 0;
     max-width: max-content;
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid var(--accent-red);
     animation:
-        typeText 4.8s steps(48, end) infinite,
-        caretBlink 0.8s step-end infinite;
+        typeText 3.2s steps(52, end) 0.35s forwards,
+        caretBlink 0.8s step-end 0.35s 5 forwards;
 }
 
 .hero-portrait-wrap {
@@ -460,13 +458,13 @@ header {
 }
 
 @keyframes typeText {
-    0%, 12% { width: 0; }
-    46%, 72% { width: 100%; }
-    100% { width: 0; }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 @keyframes caretBlink {
     50% { border-color: transparent; }
+    100% { border-color: transparent; }
 }
 
 /* Custom progress bar styling */
@@ -1346,6 +1344,15 @@ textarea::placeholder {
     #home {
         padding-top: 7rem;
         margin-bottom: 3rem;
+    }
+
+    .hero-typewriter {
+        max-width: 100%;
+    }
+
+    .hero-typewriter span {
+        max-width: 100%;
+        font-size: clamp(0.9rem, 4.4vw, 1.15rem);
     }
 
     .btn {
