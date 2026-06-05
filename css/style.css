@@ -2143,7 +2143,7 @@ textarea::placeholder {
     #web-page.page-hero,
     #video-page.page-hero,
     #design-page.page-hero {
-        margin-top: 0 !important;
+        margin-top: 1rem !important;
         padding-top: 1rem !important;
     }
 }
