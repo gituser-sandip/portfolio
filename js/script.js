@@ -112,8 +112,21 @@ sectionsToAnimate.forEach(section => {
     observer.observe(section);
 });
 
-// For individual cards within sections, observe them separately for staggered animation
-const cardsToAnimate = document.querySelectorAll('.bg-\\[\\#2a2a2a\\].animate-on-scroll');
+// For individual cards within sections, observe them separately for staggered animation.
+const cardsToAnimate = document.querySelectorAll([
+    '.bg-\\[\\#2a2a2a\\]',
+    '.page-card',
+    '.sample-card',
+    '.design-card',
+    '.web-project-card',
+    '.github-project-card',
+    '.reel-preview-card',
+    '.section-support-card',
+    '.hero-stat',
+    '.detail-strip > div',
+    '.process-list > div',
+    '.current-grid > div'
+].join(','));
 const cardObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -125,7 +138,8 @@ const cardObserver = new IntersectionObserver((entries, observer) => {
 
 cardsToAnimate.forEach((card, index) => {
     // Add a slight delay for staggered animation
-    card.style.transitionDelay = `${index * 0.1}s`;
+    card.classList.add('card-animated');
+    card.style.animationDelay = `${(index % 6) * 0.06}s`;
     cardObserver.observe(card);
 });
 
