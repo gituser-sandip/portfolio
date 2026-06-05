@@ -803,6 +803,13 @@ html.light .project-visual {
     margin-bottom: 0.35rem;
 }
 
+.process-list h4 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 0.35rem;
+    margin-top: 1rem;
+}
 .section-support-card p,
 .detail-strip p,
 .process-list p,
@@ -857,18 +864,26 @@ html.light .project-visual {
 
 .process-list > div {
     position: relative;
-    padding-top: 2.8rem;
+    padding-top: 3.5rem;
+    padding-left: 3.4rem;
+    margin-top: 0.5rem;
 }
 
 .process-list > div::before {
     counter-increment: process-step;
     content: counter(process-step, decimal-leading-zero);
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0.7rem;
+    left: 0.2rem;
     color: var(--accent-red);
     font-weight: 800;
     font-size: 0.85rem;
+    line-height: 1;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
 }
 
 .section-note {
