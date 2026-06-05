@@ -2138,6 +2138,14 @@ textarea::placeholder {
         min-height: 460px;
         padding: 0.35rem;
     }
+
+    /* Remove extra top spacing on mobile for specific pages */
+    #web-page.page-hero,
+    #video-page.page-hero,
+    #design-page.page-hero {
+        margin-top: 0 !important;
+        padding-top: 1rem !important;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
