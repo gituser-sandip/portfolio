@@ -141,6 +141,16 @@ cardsToAnimate.forEach((card, index) => {
     card.classList.add('card-animated');
     card.style.animationDelay = `${(index % 6) * 0.06}s`;
     cardObserver.observe(card);
+
+    // Dynamically add the animated passing border
+    if (window.getComputedStyle(card).position === 'static') {
+        card.style.position = 'relative';
+    }
+    if (!card.querySelector('.card-border-wrap')) {
+        const borderWrap = document.createElement('div');
+        borderWrap.className = 'card-border-wrap';
+        card.appendChild(borderWrap);
+    }
 });
 
 // Contact form fallback: open a pre-filled email draft.
