@@ -112,6 +112,29 @@ sectionsToAnimate.forEach(section => {
     observer.observe(section);
 });
 
+// Progress Bar Animation Logic
+const progressObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const bar = entry.target;
+            const targetWidth = bar.getAttribute('data-width');
+            if (targetWidth) {
+                // Small delay for smooth effect after section appears
+                setTimeout(() => {
+                    bar.style.width = targetWidth;
+                }, 200);
+            }
+            observer.unobserve(bar);
+        }
+    });
+}, { root: null, rootMargin: '0px', threshold: 0.1 });
+
+document.querySelectorAll('.progress-fill').forEach(bar => {
+    // Ensure transition is applied in JS if not in CSS
+    bar.style.transition = 'width 1.2s ease-out';
+    progressObserver.observe(bar);
+});
+
 // For individual cards within sections, observe them separately for staggered animation.
 const cardsToAnimate = document.querySelectorAll([
     '.bg-\\[\\#2a2a2a\\]',
