@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Web Development Portfolio - Sandeep Meche</title>
+    <meta name="description"
+        content="Primary web development portfolio by Sandeep Meche featuring responsive frontend projects, UI polish, GitHub projects, and live website previews.">
+    <meta name="theme-color" content="#0c0d10">
+    <link rel="icon" href="../../images/IMG_3846.PNG">
+    <link rel="stylesheet" href="../../css/tailwind-local.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="antialiased">
+    <div class="hero-bg"></div>
+
+    <div class="relative min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8 content-center">
+        <header id="header"
+            class="w-full flex justify-between items-center py-4 px-6 shadow-md fixed top-0 z-50 animate-on-scroll">
+            <a href="/" class="brand-lockup" aria-label="Sandeep Meche home">
+                <img src="../../images/IMG_3846.PNG" alt="Sandeep Meche logo" id="logo-img">
+            </a>
+            <nav id="site-nav" class="hidden md:flex space-x-8">
+                <a href="/" class="nav-link">Home</a>
+                <a href="./" class="nav-link active">Web</a>
+                <a href="../video-editing/" class="nav-link">Video</a>
+                <a href="../design-gallery/" class="nav-link">Design</a>
+                <a href="../../#services" class="nav-link">Services</a>
+                <a href="../../#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4 md:space-x-0">
+                <button id="theme-toggle" class="theme-switch focus:outline-none ml-4"
+                    aria-label="Switch to light theme" type="button">
+                    <span class="theme-switch-track" aria-hidden="true">
+                        <i class="fas fa-sun theme-switch-sun"></i>
+                        <i class="fas fa-moon theme-switch-moon"></i>
+                        <span class="theme-switch-thumb" id="theme-icon"></span>
+                    </span>
+                </button>
+                <button id="mobile-menu-button"
+                    class="md:hidden text-gray-300 hover:text-red-500 focus:outline-none ml-4"
+                    aria-label="Open mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="w-full flex flex-col items-center">
+            <section id="web-page" class="page-hero w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+                <div class="page-kicker"><i class="fas fa-laptop-code"></i> Main Portfolio Priority</div>
+                <h1 class="page-title">Web Development</h1>
+                <p class="page-subtitle">
+                    This is the primary focus of the portfolio: responsive websites, frontend layouts, UI polish, live
+                    project previews, and clean interfaces built with HTML, CSS, JavaScript, and React practice.
+                </p>
+                <div class="hero-badges">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Responsive UI</span>
+                    <span>Main Focus</span>
+                </div>
+                <div class="page-hero-actions">
+                    <a href="#web-projects" class="btn btn-primary">View Projects</a>
+                    <a href="../../#contact" class="btn btn-secondary">Start a Website</a>
+                </div>
+            </section>
+
+            <section id="web-projects" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+                <div class="sample-heading">
+                    <div>
+                        <span class="current-label">Live Projects</span>
+                        <h3>Web Project Previews</h3>
+                    </div>
+                    <a href="../../#contact" class="btn btn-secondary">Start a Website</a>
+                </div>
+
+                <div class="web-project-grid">
+                    <article class="web-project-card">
+                        <div class="web-preview">
+                            <img src="../../images/portfolio7.JPG" alt="Personal portfolio preview">
+                        </div>
+                        <div class="web-project-content">
+                            <span class="current-label">Live Website</span>
+                            <h4>Personal Portfolio</h4>
+                            <p>
+                                A responsive multi-page portfolio with dark/light themes, project pages, CV download,
+                                contact form wiring, and GitHub Pages hosting.
+                            </p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>GitHub Pages</span>
+                            </div>
+                            <div class="web-project-actions">
+                                <a href="https://www.sandeepmeche.com.np/" class="btn btn-primary" target="_blank"
+                                    rel="noopener">Visit Live</a>
+                                <a href="https://github.com/gituser-sandip/portfolio" class="btn btn-secondary"
+                                    target="_blank" rel="noopener">View Code</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="detail-strip">
+                    <div>
+                        <i class="fas fa-gauge-high"></i>
+                        <h4>Fast Static Pages</h4>
+                        <p>Simple structure, optimized assets, and clean navigation.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-moon"></i>
+                        <h4>Theme Support</h4>
+                        <p>Dark and light modes use shared CSS variables.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-mobile-screen"></i>
+                        <h4>Mobile Layouts</h4>
+                        <p>Hero, cards, buttons, and forms collapse cleanly.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-link"></i>
+                        <h4>Deployment Ready</h4>
+                        <p>Pages are built for GitHub Pages and custom domains.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+                <div class="sample-heading">
+                    <div>
+                        <span class="current-label">GitHub Projects</span>
+                        <h3>All Projects From My GitHub</h3>
+                    </div>
+                    <a href="https://github.com/gituser-sandip" class="btn btn-secondary" target="_blank"
+                        rel="noopener">Open GitHub</a>
+                </div>
+
+                <div class="github-project-grid">
+                    <article class="github-project-card">
+                        <span class="page-card-icon"><i class="fas fa-dumbbell"></i></span>
+                        <span class="current-label">TypeScript + React</span>
+                        <h4>Extra Life GYM</h4>
+                        <p>A modern gym website built with TypeScript and React, live on Vercel with full responsive
+                            design.</p>
+                        <div class="project-tags">
+                            <span>TypeScript</span>
+                            <span>React</span>
+                            <span>Vite</span>
+                            <span>Vercel</span>
+                        </div>
+                        <div class="web-project-actions">
+                            <a href="https://extra-life-gym.vercel.app" class="btn btn-primary" target="_blank"
+                                rel="noopener">Visit Live</a>
+                            <a href="https://github.com/gituser-sandip/Extra_Life_GYM" class="btn btn-secondary"
+                                target="_blank" rel="noopener">View Code</a>
+                        </div>
+                    </article>
+
+                    <article class="github-project-card">
+                        <span class="page-card-icon"><i class="fas fa-building"></i></span>
+                        <span class="current-label">JavaScript + React</span>
+                        <h4>Real State</h4>
+                        <p>A real estate listing web app with property browsing and details, deployed on Vercel.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Vercel</span>
+                            <span>Property</span>
+                        </div>
+                        <div class="web-project-actions">
+                            <a href="https://realstate-smoky-three.vercel.app" class="btn btn-primary" target="_blank"
+                                rel="noopener">Visit Live</a>
+                            <a href="https://github.com/gituser-sandip/real_state" class="btn btn-secondary"
+                                target="_blank" rel="noopener">View Code</a>
+                        </div>
+                    </article>
+
+                    <article class="github-project-card">
+                        <span class="page-card-icon"><i class="fas fa-briefcase"></i></span>
+                        <span class="current-label">TypeScript + React</span>
+                        <h4>Hyder Ali Advisory</h4>
+                        <p>A professional advisory portfolio website built with TypeScript and React, deployed on
+                            Vercel.</p>
+                        <div class="project-tags">
+                            <span>TypeScript</span>
+                            <span>React</span>
+                            <span>Vite</span>
+                            <span>Vercel</span>
+                        </div>
+                        <div class="web-project-actions">
+                            <a href="https://hyderali-advisory-protfolio.vercel.app" class="btn btn-primary"
+                                target="_blank" rel="noopener">Visit Live</a>
+                            <a href="https://github.com/gituser-sandip/hyderali-advisory-protfolio"
+                                class="btn btn-secondary" target="_blank" rel="noopener">View Code</a>
+                        </div>
+                    </article>
+
+                    <article class="github-project-card">
+                        <span class="page-card-icon"><i class="fas fa-clock"></i></span>
+                        <span class="current-label">React + Laravel</span>
+                        <h4>Times</h4>
+                        <p>A watch-store web project with the tagline "more than time it's a statement."</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Tailwind</span>
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                        </div>
+                        <div class="web-project-actions">
+                            <a href="https://times-watch-store.vercel.app/" class="btn btn-primary" target="_blank"
+                                rel="noopener">Visit Live</a>
+                            <a href="https://github.com/gituser-sandip/Times" class="btn btn-secondary" target="_blank"
+                                rel="noopener">View Code</a>
+                        </div>
+                    </article>
+
+                    <article class="github-project-card">
+                        <span class="page-card-icon"><i class="fas fa-heart-pulse"></i></span>
+                        <span class="current-label">Java</span>
+                        <h4>MindWell</h4>
+                        <p>A wellness-focused application with a clean frontend, deployed and live online.</p>
+                        <div class="project-tags">
+                            <span>Java</span>
+                            <span>Wellness App</span>
+                            <span>Full Stack</span>
+                        </div>
+                        <div class="web-project-actions">
+                            <a href="https://mindwell-nepal.onrender.com/" class="btn btn-primary" target="_blank"
+                                rel="noopener">Visit Live</a>
+                            <a href="https://github.com/gituser-sandip/MindWell" class="btn btn-secondary"
+                                target="_blank" rel="noopener">View Code</a>
+                        </div>
+                    </article>
+
+                    <article class="github-project-card">
+                        <span class="page-card-icon"><i class="fas fa-book-open-reader"></i></span>
+                        <span class="current-label">HTML</span>
+                        <h4>WellGuide</h4>
+                        <p>An HTML project connected to health guidance and learning content, deployed on Netlify.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>Frontend</span>
+                            <span>Netlify</span>
+                        </div>
+                        <div class="web-project-actions">
+                            <a href="https://wellgu1de.netlify.app/" class="btn btn-primary" target="_blank"
+                                rel="noopener">Visit Live</a>
+                            <a href="https://github.com/gituser-sandip/WellGuide" class="btn btn-secondary"
+                                target="_blank" rel="noopener">View Code</a>
+                        </div>
+                    </article>
+
+                    <article class="github-project-card">
+                        <span class="page-card-icon"><i class="fas fa-camera-retro"></i></span>
+                        <span class="current-label">HTML</span>
+                        <h4>Photobooth</h4>
+                        <p>A photo-booth style web project with a fun interactive UI, deployed on Vercel.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Vercel</span>
+                        </div>
+                        <div class="web-project-actions">
+                            <a href="https://photobooth-blond.vercel.app" class="btn btn-primary" target="_blank"
+                                rel="noopener">Visit Live</a>
+                            <a href="https://github.com/gituser-sandip/potobooth" class="btn btn-secondary"
+                                target="_blank" rel="noopener">View Code</a>
+                        </div>
+                    </article>
+
+                    <article class="github-project-card">
+                        <span class="page-card-icon"><i class="fas fa-volume-xmark"></i></span>
+                        <span class="current-label">JavaScript</span>
+                        <h4>silence</h4>
+                        <p>A deployed JavaScript web project with a unique concept, hosted on Vercel.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>Vercel</span>
+                            <span>Web App</span>
+                        </div>
+                        <div class="web-project-actions">
+                            <a href="https://silence-gamma.vercel.app" class="btn btn-primary" target="_blank"
+                                rel="noopener">Visit Live</a>
+                            <a href="https://github.com/gituser-sandip/silence" class="btn btn-secondary"
+                                target="_blank" rel="noopener">View Code</a>
+                        </div>
+                    </article>
+                </div>
+                <p class="section-note">
+                    All public projects from my GitHub are listed above — from modern TypeScript + React apps deployed
+                    on Vercel to early HTML experiments on GitHub Pages. Each one reflects a different stage of
+                    learning, building, and shipping.
+                </p>
+            </section>
+
+            <section class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-white text-center mb-10">Web <span
+                        class="text-red-500">Services</span></h2>
+                <div class="current-grid">
+                    <div>
+                        <span class="current-label">Build</span>
+                        <h3>Responsive Pages</h3>
+                        <p>Clean landing pages, portfolio sections, and static websites that work across screen sizes.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="current-label">Improve</span>
+                        <h3>UI Polish</h3>
+                        <p>Better spacing, colors, navigation, sections, mobile behavior, and visual hierarchy.</p>
+                    </div>
+                    <div>
+                        <span class="current-label">Publish</span>
+                        <h3>GitHub Pages Hosting</h3>
+                        <p>Static website deployment with custom domain setup and organized project structure.</p>
+                    </div>
+                </div>
+                <div class="section-actions">
+                    <a href="../../#contact" class="btn btn-primary">Request UI Polish</a>
+                    <a href="../design-gallery/" class="btn btn-secondary">See Design Services</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="w-full max-w-6xl text-center py-8 mt-12 border-t border-gray-700">
+            <p class="text-gray-500 text-sm">&copy; 2026 Sandeep Meche. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

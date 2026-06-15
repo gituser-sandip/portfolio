@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> <!-- Added 'dark' class as default theme -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Meche - Portfolio</title>
+    <meta name="description"
+        content="Web development portfolio of Sandeep Meche, a Kathmandu-based frontend development student with supporting design and video editing skills.">
+    <meta name="author" content="Sandeep Meche">
+    <meta name="theme-color" content="#0c0d10">
+    <meta property="og:title" content="Sandeep Meche - Creative Portfolio">
+    <meta property="og:description"
+        content="Frontend web development, responsive UI projects, and supporting creative work by Sandeep Meche.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sandeepmeche.com.np">
+    <meta property="og:image" content="images/portfolio7.JPG">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="images/IMG_3846.PNG">
+    <!-- Local Tailwind utility snapshot -->
+    <link rel="stylesheet" href="css/tailwind-local.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="antialiased">
+    <!-- Hero Background Blobs -->
+    <div class="hero-bg"></div>
+
+    <!-- Animated Red Lines -->
+    <div class="site-lines">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+        <div class="line line-h line-4"></div>
+        <div class="line line-h line-5"></div>
+    </div>
+
+    <div class="relative min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8 content-center">
+        <!-- Header -->
+        <header id="header"
+            class="w-full flex justify-between items-center py-4 px-6 shadow-md fixed top-0 z-50 animate-on-scroll">
+            <a href="#home" class="brand-lockup" aria-label="Sandeep Meche home">
+                <img src="images/IMG_3846.PNG" alt="Sandeep Meche logo" id="logo-img">
+            </a>
+            <nav id="site-nav" class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4 md:space-x-0">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-switch focus:outline-none ml-4" aria-label="Switch to light theme"
+                    type="button">
+                    <span class="theme-switch-track" aria-hidden="true">
+                        <i class="fas fa-sun theme-switch-sun"></i>
+                        <i class="fas fa-moon theme-switch-moon"></i>
+                        <span class="theme-switch-thumb" id="theme-icon"></span>
+                    </span>
+                </button>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-red-500 focus:outline-none ml-4"
+                    aria-label="Open mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home"
+            class="relative w-full max-w-6xl flex flex-col md:flex-row items-center justify-between py-20 px-6 mt-12 mb-24 animate-on-scroll">
+            <div class="text-center md:text-left md:w-2/3 z-10">
+                <p class="eyebrow hero-reveal hero-delay-1">Hello, I'm</p>
+                <h1 class="hero-title hero-reveal hero-delay-2 text-5xl sm:text-6xl lg:text-7xl font-extrabold text-black leading-tight">
+                    <span class="text-red-5xl">Sandeep </span> <br> <span class="text-white-5xl">Meche</span>
+                </h1>
+                <p class="hero-role hero-typewriter hero-reveal hero-delay-3 text-red-500 text-xl sm:text-2xl mt-4 font-semibold"
+                    aria-label="Frontend Developer | Responsive UI Builder | Web Project Creator">
+                    <span>Web Developer | Video Editor | Graphic Designer</span>
+                </p>
+                <p class="hero-reveal hero-delay-4 text-gray-500 text-xl sm:text-2xl font-semibold">
+                    Building responsive websites and clean frontend interfaces that work smoothly across devices.
+                </p>
+                <p class="hero-reveal hero-delay-5 text-gray-400 text-lg mt-6 max-w-md mx-auto md:mx-0">
+                    My main focus is web development with HTML, CSS, JavaScript, and React practice. Design and video
+                    editing support the visual polish, but frontend work comes first.
+                </p>
+                <div class="hero-reveal hero-delay-6 mt-10 flex justify-center md:justify-start space-x-4">
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="assets/Sandeep_Meche_CV.pdf" class="btn btn-ghost" download>Download CV</a>
+                </div>
+                <div class="hero-reveal hero-delay-7 hero-badges" aria-label="Core tools and skills">
+                    <span>HTML/CSS</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Responsive UI</span>
+                    <span>GitHub Pages</span>
+                </div>
+                
+            </div>
+            <div class="hero-portrait-wrap mt-12 md:mt-0 md:w-1/4 flex justify-center z-10">
+                <div id="profile"
+                    class="w-56 h-56 md:w-64 md:h-64 bg-gray-700 rounded-full flex items-center justify-center text-white text-5xl font-bold shadow-2xl border-4 border-red-900">
+                    <img src="images/portfolio7.JPG" alt="sandip meche" class="w-full h-full rounded-full object-cover">
+                </div>
+            </div>
+            <div id="animated-dot1"></div>
+            <div id="animated-dot2"></div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-primary text-center mb-10 animate-pulse-slow">About <span
+                    class="text-red-500">Me</span></h2>
+            <p class="text-gray-400 text-lg text-center max-w-3xl mx-auto mb-12">
+                I'm a computing undergraduate based in Kathmandu, Nepal, focused mainly on frontend web development.
+                I build responsive pages, portfolio layouts, and clean UI concepts while using design and editing skills
+                only as supporting tools for better presentation.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat Card 1 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">Web</div>
+                    <p class="text-gray-300 mt-2">Main Priority</p>
+                </div>
+                <!-- Stat Card 2 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">4+</div>
+                    <p class="text-gray-300 mt-2">Live Web Projects</p>
+                </div>
+                <!-- Stat Card 3 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">3</div>
+                    <p class="text-gray-300 mt-2">Core Web Skills</p>
+                </div>
+                <!-- Stat Card 4 -->
+                <div
+                    class="bg-[#2a2a2a] p-6 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="text-red-500 text-4xl font-bold">AI</div>
+                    <p class="text-gray-300 mt-2">Computing Student</p>
+                </div>
+            </div>
+            <div class="section-support">
+                <div class="section-support-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Frontend Focus</h4>
+                    <p>Clean layouts, readable UI, and pages that feel practical on real screens.</p>
+                </div>
+                <div class="section-support-card">
+                    <i class="fas fa-location-dot"></i>
+                    <h4>Web-First Work</h4>
+                    <p>Portfolio pages, landing sections, responsive fixes, and static website polish.</p>
+                </div>
+                <div class="section-support-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h4>Supporting Creative Skills</h4>
+                    <p>Design and editing are secondary skills used mainly to improve frontend presentation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Journey Section (Experience & Education) -->
+        <section id="journey" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-primary text-center mb-10">My <span class="text-red-500">Journey</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Experience Column -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-briefcase text-red-500 mr-3"></i> Experience
+                    </h3>
+                    <div class="relative pl-6 border-l-2 border-gray-700 space-y-8">
+                        <!-- Experience Item 1 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">Contract - Kathmandu, Nepal</p>
+                            <h4 class="text-xl font-semibold text-primary">Event Coordinator</h4>
+                            <p class="text-red-400">Elite Events</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Coordinate visual production, digital logistics, promotional content, and on-site media
+                                assets for premium event experiences.
+                            </p>
+                        </div>
+                        <!-- Experience Item 2 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2023 - 2024</p>
+                            <h4 class="text-xl font-semibold text-primary">Web Portfolio Builder</h4>
+                            <p class="text-red-400">Personal & Practice Projects</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Build responsive portfolio pages, static websites, navigation systems, and mobile-first
+                                interface sections.
+                            </p>
+                        </div>
+                        <!-- Experience Item 3 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2022 - 2023</p>
+                            <h4 class="text-xl font-semibold text-primary">Frontend UI Practice</h4>
+                            <p class="text-red-400">Personal Learning</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Build beginner frontend interfaces with HTML, CSS, JavaScript, and responsive layout
+                                concepts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Column -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-primary mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap text-red-500 mr-3"></i> Education
+                    </h3>
+                    <div class="relative pl-6 border-l-2 border-gray-700 space-y-8">
+                        <!-- Education Item 1 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">Currently Studying</p>
+                            <h4 class="text-xl font-semibold text-primary">Bachelor of Science in Computing with AI
+                            </h4>
+                            <p class="text-red-400">Islington College - Kathmandu, NEPAL</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Specialized in Software Engineering and Artificial Intelligence.
+                            </p>
+                        </div>
+                        <!-- Education Item 2 -->
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2024</p>
+                            <h4 class="text-xl font-semibold text-primary">+2 NEB</h4>
+                            <p class="text-red-400">Kanchanjunga English School</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Completed higher secondary education before starting undergraduate computing studies.
+                            </p>
+                        </div>
+                        <div class="relative pb-8">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-400 mb-1">2022</p>
+                            <h4 class="text-xl font-semibold text-primary">SEE</h4>
+                            <p class="text-red-400">Sigma English School</p>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Built the academic foundation for computing, design, and creative work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="section-note">
+                
+            </p>
+        </section>
+
+        <!-- My Skills Section -->
+        <section id="skills" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">My <span class="text-red-500">Skills</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Technical Skills -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                        <i class="fas fa-code text-red-500 mr-3"></i> Technical Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Frontend Development</span>
+                                <span class="text-gray-300">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="95%" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Responsive UI</span>
+                                <span class="text-gray-300">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="90%" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">JavaScript</span>
+                                <span class="text-gray-300">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="85%" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Video Editing</span>
+                                <span class="text-gray-300">55%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="55%" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Graphic Design</span>
+                                <span class="text-gray-300">50%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="50%" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>SQL</span>
+                            <span>PHP</span>
+                            <span>Python</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                        <i class="fas fa-star text-red-500 mr-3"></i> Professional Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Aesthetic Judgment</span>
+                                <span class="text-gray-300">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="95%" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Communication</span>
+                                <span class="text-gray-300">70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="70%" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Creative Direction</span>
+                                <span class="text-gray-300">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="85%" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300">Problem Solving</span>
+                                <span class="text-gray-300">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="90%" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-tags">
+                            <span>Photoshop</span>
+                            <span>Illustrator</span>
+                            <span>Canva</span>
+                            <span>DaVinci Resolve</span>
+                            <span>CapCut</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-strip">
+                <div>
+                    <i class="fas fa-mobile-screen-button"></i>
+                    <h4>Responsive Thinking</h4>
+                    <p>Layouts are checked for small screens first, then expanded for desktop.</p>
+                </div>
+                <div>
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    <h4>Visual Polish</h4>
+                    <p>Color, spacing, typography, and image treatment are part of the workflow.</p>
+                </div>
+                <div>
+                    <i class="fas fa-video"></i>
+                    <h4>Short-Form Rhythm</h4>
+                    <p>Edits focus on hooks, pacing, captions, and platform-ready delivery.</p>
+                </div>
+                <div>
+                    <i class="fas fa-code"></i>
+                    <h4>Frontend Basics</h4>
+                    <p>HTML, CSS, JavaScript, and React practice support clean UI builds.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">Featured <span
+                    class="text-red-500">Projects</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-[#2a2a2a] priority-card rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-laptop-code"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Responsive Portfolio Website</h3>
+                        <p class="text-gray-400 text-sm">
+                            The main web project: responsive layout, theme switching, smooth navigation, project pages,
+                            CV download, and contact flow.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive UI</span>
+                        </div>
+                        <a href="https://www.sandeepmeche.com.np" class="text-red-500 hover:underline mt-4 inline-block">View Project <i
+                                class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] priority-card rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-window-restore"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Web Development Projects</h3>
+                        <p class="text-gray-400 text-sm">
+                            Live frontend projects, GitHub repositories, and website previews showing practice with
+                            HTML, CSS, JavaScript, React, and deployment.
+                        </p>
+                        <div class="project-tags">
+                            <span>Frontend</span>
+                            <span>GitHub</span>
+                            <span>Deployment</span>
+                        </div>
+                        <a href="pages/web-development/" class="text-red-500 hover:underline mt-4 inline-block">View Web Projects <i
+                                class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] priority-card rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-mobile-screen-button"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Mobile UI & Responsiveness</h3>
+                        <p class="text-gray-400 text-sm">
+                            Section spacing, mobile navigation, card grids, contact layout, and page structures refined
+                            for small screens.
+                        </p>
+                        <div class="project-tags">
+                            <span>Mobile First</span>
+                            <span>CSS</span>
+                            <span>UI Polish</span>
+                        </div>
+                        <a href="pages/web-development/" class="text-red-500 hover:underline mt-4 inline-block">See Web Details <i
+                                class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] secondary-card rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-film"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Supporting Video Edits</h3>
+                        <p class="text-gray-400 text-sm">
+                            Short-form editing is a secondary skill used to support web content, previews, and visual
+                            storytelling when needed.
+                        </p>
+                        <div class="project-tags">
+                            <span>Secondary</span>
+                            <span>Captions</span>
+                            <span>Social Clips</span>
+                        </div>
+                        <a href="pages/video-editing/" class="text-red-500 hover:underline mt-4 inline-block">View Secondary Work <i
+                                class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] secondary-card rounded-xl overflow-hidden shadow-lg border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <div class="project-visual"><i class="fas fa-palette"></i></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">Supporting Design Assets</h3>
+                        <p class="text-gray-400 text-sm">
+                            Design work is kept as a smaller support area for thumbnails, banners, and visuals that
+                            improve web presentation.
+                        </p>
+                        <div class="project-tags">
+                            <span>Secondary</span>
+                            <span>Canva</span>
+                            <span>Thumbnails</span>
+                        </div>
+                        <a href="pages/design-gallery/" class="text-red-500 hover:underline mt-4 inline-block">View Secondary Work <i
+                                class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-actions">
+                <a href="pages/web-development/" class="btn btn-primary">Explore Web Work</a>
+                <a href="pages/video-editing/" class="btn btn-secondary">Secondary Video Work</a>
+                <a href="pages/design-gallery/" class="btn btn-ghost">Secondary Design Work</a>
+            </div>
+        </section>
+
+        <!-- Portfolio Pages Section -->
+        <section id="samples" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-4">Portfolio <span
+                    class="text-red-500">Pages</span></h2>
+            <p class="text-gray-400 text-lg text-center max-w-3xl mx-auto mb-10">
+                Start with the web development page. Video editing and design gallery are secondary pages that support
+                the main frontend portfolio.
+            </p>
+
+            <div class="page-card-grid">
+                <a href="pages/web-development/" class="page-card priority-card">
+                    <span class="page-card-icon"><i class="fas fa-laptop-code"></i></span>
+                    <span class="current-label">Main Priority</span>
+                    <h3>Web Projects</h3>
+                    <p>Responsive portfolio pages, frontend layouts, live deployments, and GitHub project previews.</p>
+                    <span class="page-card-link">Open web page <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="pages/video-editing/" class="page-card secondary-card">
+                    <span class="page-card-icon"><i class="fas fa-film"></i></span>
+                    <span class="current-label">Secondary Skill</span>
+                    <h3>Supporting Video Editing</h3>
+                    <p>Short-form clips and captions used as supporting media skills, not the main portfolio focus.</p>
+                    <span class="page-card-link">Open secondary page <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="pages/design-gallery/" class="page-card secondary-card">
+                    <span class="page-card-icon"><i class="fas fa-palette"></i></span>
+                    <span class="current-label">Secondary Skill</span>
+                    <h3>Supporting Design Gallery</h3>
+                    <p>Design assets that support web pages, thumbnails, banners, and project presentation.</p>
+                    <span class="page-card-link">Open secondary page <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <p class="section-note">
+                
+            </p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">My <span class="text-red-500">Services</span>
+            </h2>
+
+            <div class="services-banner">
+                <div>
+                    <span class="current-label">Available Services</span>
+                    <h3>Frontend web development is the main service; creative visuals are optional support.</h3>
+                </div>
+                <div class="service-pills">
+                    <span>Frontend Development</span>
+                    <span>Responsive UI</span>
+                    <span>Static Websites</span>
+                    <span>Supporting Design</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="bg-[#2a2a2a] priority-card p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-laptop-code text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Frontend Development</h3>
+                    <p class="text-gray-400 text-sm">
+                        Responsive web pages, portfolio sections, and clean UI concepts using HTML, CSS, and
+                        JavaScript.
+                    </p>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] priority-card p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-mobile-screen-button text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Responsive UI Polish</h3>
+                    <p class="text-gray-400 text-sm">
+                        Better spacing, navigation, cards, forms, and mobile behavior for existing pages.
+                    </p>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-globe text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Static Website Setup</h3>
+                    <p class="text-gray-400 text-sm">
+                        GitHub Pages-ready structure, project pages, links, and basic publishing preparation.
+                    </p>
+                </div>
+                <div
+                    class="bg-[#2a2a2a] secondary-card p-8 rounded-xl text-center shadow-md border border-gray-700 hover:border-red-500 transition-all duration-300 animate-on-scroll">
+                    <i class="fas fa-pen-nib text-red-500 text-5xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Supporting Creative Assets</h3>
+                    <p class="text-gray-400 text-sm">
+                        Simple thumbnails, banners, or short edits when a web project needs visual support.
+                    </p>
+                </div>
+            </div>
+            <div class="process-list">
+                <div>
+                    <h4>Brief</h4>
+                    <p>Understand the goal, audience, deadline, and assets before starting.</p>
+                </div>
+                <div>
+                    <h4>Create</h4>
+                    <p>Build the first polished direction with clean structure and visual consistency.</p>
+                </div>
+                <div>
+                    <h4>Deliver</h4>
+                    <p>Export files or publish pages in formats that are ready to use.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Currently Section -->
+        <section id="currently" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">Currently <span
+                    class="text-red-500">Building</span></h2>
+            <div class="current-grid">
+                <div>
+                    <span class="current-label">Learning</span>
+                    <h3>Computing with AI</h3>
+                    <p>Studying at Islington College while prioritizing frontend development, JavaScript, Python, and
+                        practical AI fundamentals.</p>
+                </div>
+                <div>
+                    <span class="current-label">Building</span>
+                    <h3>Web Interfaces</h3>
+                    <p>Improving responsive sections, project cards, navigation, contact flows, and mobile UI details.</p>
+                </div>
+                <div>
+                    <span class="current-label">Exploring</span>
+                    <h3>Frontend UI</h3>
+                    <p>Learning how layout, spacing, accessibility, and design decisions translate into better code.</p>
+                </div>
+            </div>
+            <div class="section-actions">
+                <a href="assets/Sandeep_Meche_CV.pdf" class="btn btn-primary" download>Download CV</a>
+                <a href="#contact" class="btn btn-secondary">Discuss Work</a>
+            </div>
+        </section>
+
+        <!-- Get In Touch Section -->
+        <section id="contact" class="w-full p-8 sm:p-12 rounded-2xl shadow-xl my-12 animate-on-scroll">
+            <h2 class="text-4xl font-bold text-white text-center mb-10">Get In <span class="text-red-500">Touch</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Contact Info</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Email Me</p>
+                                <a href="mailto:Sandipmeche6@gmail.com"
+                                    class="text-white hover:text-red-500 transition-colors duration-300">Sandipmeche6@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Call Me</p>
+                                <a href="tel:+9779807944252"
+                                    class="text-white hover:text-red-500 transition-colors duration-300">+977
+                                    9807944252</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Location</p>
+                                <p class="text-white">Kathmandu, Nepal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <p class="text-gray-400">Website</p>
+                                <a href="https://www.sandeepmeche.com.np"
+                                    class="text-white hover:text-red-500 transition-colors duration-300">www.sandeepmeche.com.np</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Quick Links</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="assets/Sandeep_Meche_CV.pdf" download class="quick-link"><i
+                                    class="fas fa-file-arrow-down"></i> CV</a>
+                            <a href="mailto:Sandipmeche6@gmail.com" class="quick-link"><i
+                                    class="fas fa-envelope"></i> Email</a>
+                            <a href="https://www.sandeepmeche.com.np" class="quick-link"><i
+                                    class="fas fa-globe"></i> Website</a>
+                        </div>
+                    </div>
+                    <div class="social-links" aria-label="Social and portfolio links">
+                        <a href="https://github.com/gituser-sandip" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.instagram.com/asandip01/" target="_blank" rel="noopener"><i
+                                class="fab fa-instagram"></i> Instagram</a>
+                        <a href="https://www.sandeepmeche.com.np" target="_blank" rel="noopener"><i
+                                class="fas fa-globe"></i> Portfolio</a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Send Me a Message</h3>
+                    <form id="contact-form" class="space-y-6" data-endpoint="http://127.0.0.1:8000/api/contact">
+                        <div>
+                            <label for="name" class="block text-gray-400 text-sm font-bold mb-2">Your Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-400 text-sm font-bold mb-2">Your Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="john.doe@example.com">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-400 text-sm font-bold mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="Regarding a project...">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-400 text-sm font-bold mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                class="w-full p-3 bg-[#2a2a2a] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-red-500 transition-colors duration-300"
+                                placeholder="Hello Sandeep, I'd like to discuss..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                            <span class="submit-label">Send Message</span>
+                        </button>
+                        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                        <p class="form-note">This opens a pre-filled email draft so your message goes directly to
+                            me.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full max-w-6xl text-center py-8 mt-12 border-t border-gray-700">
+            <p class="text-gray-500 text-sm">&copy; 2026 Sandeep Meche. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
