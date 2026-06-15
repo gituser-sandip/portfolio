@@ -246,3 +246,23 @@ contactForm?.addEventListener('submit', async (event) => {
         }
     }
 });
+
+// Scroll to Top Button Functionality
+const scrollToTopButton = document.getElementById('scroll-to-top');
+
+// Show/hide the button based on scroll position
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollToTopButton?.classList.add('show');
+    } else {
+        scrollToTopButton?.classList.remove('show');
+    }
+}, { passive: true });
+
+// Scroll to top when button is clicked
+scrollToTopButton?.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

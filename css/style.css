@@ -2548,3 +2548,46 @@ textarea::placeholder {
         opacity: 0;
     }
 }
+
+/* Scroll to Top Button Styles */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-red);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.scroll-to-top:hover {
+    background: var(--accent-red-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.6);
+}
+
+.scroll-to-top.show {
+    display: flex;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
