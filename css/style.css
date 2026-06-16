@@ -263,33 +263,6 @@ header {
     position: relative;
 }
 
-.hero-portrait-wrap::before {
-    content: '';
-    position: absolute;
-    width: 19rem;
-    height: 19rem;
-    border-radius: 50%;
-    background:
-        radial-gradient(circle, rgba(239, 68, 68, 0.22), transparent 58%),
-        conic-gradient(from 180deg, transparent, rgba(239, 68, 68, 0.32), transparent 34%);
-    filter: blur(2px);
-    opacity: 0.85;
-    animation: portraitHalo 7s linear infinite;
-}
-
-.hero-portrait-wrap::after {
-    content: '';
-    position: absolute;
-    width: 1.05rem;
-    height: 1.05rem;
-    border-radius: 50%;
-    background: radial-gradient(circle, #facc15 0 18%, var(--accent-red) 42%, transparent 72%);
-    box-shadow:
-        0 0 18px rgba(250, 204, 21, 0.5),
-        0 0 28px rgba(239, 68, 68, 0.35);
-    animation: profileSparkMove 5.5s ease-in-out infinite;
-    z-index: 2;
-}
 
 .btn {
     display: inline-flex;
@@ -2228,16 +2201,6 @@ textarea::placeholder {
         height: min(15rem, 68vw);
     }
 
-    .hero-portrait-wrap::before {
-        width: min(16.5rem, 74vw);
-        height: min(16.5rem, 74vw);
-    }
-
-    .hero-portrait-wrap::after {
-        width: 0.9rem;
-        height: 0.9rem;
-        animation-name: profileSparkMoveMobile;
-    }
 
     #animated-dot1,
     #animated-dot2 {
