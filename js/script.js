@@ -26,6 +26,16 @@ if (mobileMenuButton && navMenu) {
         navMenu.classList.toggle('mobile-open');
         mobileMenuButton.setAttribute('aria-expanded', navMenu.classList.contains('mobile-open'));
     });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (event) => {
+        if (navMenu.classList.contains('mobile-open') && 
+            !navMenu.contains(event.target) && 
+            !mobileMenuButton.contains(event.target)) {
+            navMenu.classList.remove('mobile-open');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
 }
 
 // Theme Toggle Logic
