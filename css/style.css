@@ -264,15 +264,20 @@ header {
     max-width: 38rem;
     position: relative;
     z-index: 3;
+    text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
 }
 
 #home {
-    min-height: min(760px, calc(100vh - 5rem));
+    width: 100vw;
+    max-width: none;
+    min-height: 100vh;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
     overflow: hidden;
     isolation: isolate;
     background:
-        radial-gradient(circle at 68% 44%, rgba(239, 68, 68, 0.34), transparent 38%),
-        linear-gradient(120deg, rgba(12, 13, 16, 0.96) 0%, rgba(12, 13, 16, 0.78) 38%, rgba(12, 13, 16, 0.18) 70%, rgba(12, 13, 16, 0.82) 100%);
+        radial-gradient(circle at 70% 44%, rgba(239, 68, 68, 0.28), transparent 38%),
+        linear-gradient(120deg, rgba(12, 13, 16, 0.95) 0%, rgba(12, 13, 16, 0.74) 36%, rgba(12, 13, 16, 0.08) 68%, rgba(12, 13, 16, 0.64) 100%);
 }
 
 #home::before,
@@ -286,22 +291,24 @@ header {
 #home::before {
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(12, 13, 16, 0.96) 0%, rgba(12, 13, 16, 0.78) 35%, rgba(12, 13, 16, 0.1) 63%, rgba(12, 13, 16, 0.82) 100%),
-        linear-gradient(180deg, rgba(12, 13, 16, 0.5), transparent 35%, rgba(12, 13, 16, 0.72));
+        linear-gradient(90deg, rgba(7, 8, 12, 0.98) 0%, rgba(10, 11, 16, 0.78) 34%, rgba(10, 11, 16, 0.08) 62%, rgba(10, 11, 16, 0.68) 100%),
+        linear-gradient(180deg, rgba(7, 8, 12, 0.58), transparent 34%, rgba(7, 8, 12, 0.8));
 }
 
 #home::after {
-    inset: 1rem;
+    inset: 1.2rem;
     border: 1px solid rgba(239, 68, 68, 0.12);
-    box-shadow: inset 0 0 70px rgba(239, 68, 68, 0.08);
+    box-shadow:
+        inset 0 0 80px rgba(239, 68, 68, 0.08),
+        inset 0 -120px 110px rgba(0, 0, 0, 0.36);
 }
 
 .hero-character-bg {
     position: absolute;
-    inset: -2rem -5rem -3rem 19%;
+    inset: 0;
     z-index: 0;
-    opacity: 0.84;
-    filter: saturate(1.08) contrast(1.05);
+    opacity: 1;
+    filter: saturate(1.16) contrast(1.08) brightness(1.02);
     transform: translateZ(0);
 }
 
@@ -309,7 +316,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 62% center;
+    object-position: 58% center;
 }
 
 
@@ -1961,14 +1968,32 @@ textarea::placeholder {
 
 @media (min-width: 768px) {
     #home {
-        max-width: 78rem;
         justify-content: flex-start;
-        padding-left: clamp(2rem, 5vw, 4.25rem) !important;
-        padding-right: clamp(2rem, 5vw, 4.25rem) !important;
+        padding-top: clamp(7rem, 12vh, 9rem) !important;
+        padding-bottom: clamp(4rem, 8vh, 6rem) !important;
+        padding-left: clamp(2rem, 7vw, 6.5rem) !important;
+        padding-right: clamp(2rem, 7vw, 6.5rem) !important;
+        margin-top: 0 !important;
+        margin-bottom: 4rem !important;
+    }
+
+    .hero-copy {
+        max-width: min(43rem, 48vw);
+    }
+
+    #home .hero-reveal.hero-delay-4,
+    #home .hero-reveal.hero-delay-5 {
+        color: rgba(244, 244, 245, 0.86);
     }
 
     .hero-badges {
         justify-content: flex-start;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-character-bg img {
+        object-position: 62% center;
     }
 }
 
@@ -2031,26 +2056,32 @@ textarea::placeholder {
     }
 
     #home {
-        min-height: 740px;
-        padding-top: 6.4rem !important;
-        padding-bottom: 3.5rem !important;
-        margin-top: 0.5rem !important;
-        margin-bottom: 2rem !important;
+        width: 100vw;
+        min-height: 100svh;
+        padding-top: 5.8rem !important;
+        padding-bottom: 2rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 2.5rem !important;
         text-align: center;
         justify-content: flex-end;
         background:
-            radial-gradient(circle at 50% 42%, rgba(239, 68, 68, 0.28), transparent 42%),
-            linear-gradient(180deg, rgba(12, 13, 16, 0.25) 0%, rgba(12, 13, 16, 0.72) 46%, rgba(12, 13, 16, 0.98) 100%);
+            radial-gradient(circle at 50% 27%, rgba(239, 68, 68, 0.3), transparent 42%),
+            linear-gradient(180deg, rgba(12, 13, 16, 0.08) 0%, rgba(12, 13, 16, 0.34) 34%, rgba(12, 13, 16, 0.92) 65%, rgba(12, 13, 16, 1) 100%);
     }
 
     #home::before {
         background:
-            linear-gradient(180deg, rgba(12, 13, 16, 0.16) 0%, rgba(12, 13, 16, 0.62) 44%, rgba(12, 13, 16, 0.98) 100%),
-            linear-gradient(90deg, rgba(12, 13, 16, 0.74), transparent 50%, rgba(12, 13, 16, 0.74));
+            linear-gradient(180deg, rgba(12, 13, 16, 0.04) 0%, rgba(12, 13, 16, 0.3) 34%, rgba(12, 13, 16, 0.9) 66%, rgba(12, 13, 16, 1) 100%),
+            linear-gradient(90deg, rgba(12, 13, 16, 0.7), transparent 50%, rgba(12, 13, 16, 0.7));
     }
 
     #home::after {
         inset: 0.75rem;
+        box-shadow:
+            inset 0 0 45px rgba(239, 68, 68, 0.08),
+            inset 0 -150px 120px rgba(0, 0, 0, 0.55);
     }
 
     #home .md\:w-2\/3,
@@ -2060,16 +2091,18 @@ textarea::placeholder {
 
     .hero-copy {
         max-width: 100%;
-        padding-top: 17rem;
+        padding-top: min(42vh, 20rem);
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.72);
     }
 
     .hero-character-bg {
-        inset: 0 -8rem 12rem -8rem;
-        opacity: 0.72;
+        inset: 0 -7rem 23vh -7rem;
+        opacity: 1;
+        filter: saturate(1.15) contrast(1.08) brightness(1.03);
     }
 
     .hero-character-bg img {
-        object-position: 52% top;
+        object-position: 51% top;
     }
 
     .hero-title {
@@ -2081,6 +2114,7 @@ textarea::placeholder {
         margin-left: auto;
         margin-right: auto;
         max-width: 22rem;
+        color: #fb7185 !important;
     }
 
     .hero-typewriter {
@@ -2102,6 +2136,7 @@ textarea::placeholder {
         width: 100%;
         padding-inline: 1rem;
         white-space: normal;
+        min-height: 46px;
     }
 
     #home .space-x-4 {
@@ -2363,6 +2398,9 @@ textarea::placeholder {
     #home {
         padding-left: 0.85rem !important;
         padding-right: 0.85rem !important;
+        padding-top: 5.4rem !important;
+        padding-bottom: 1.75rem !important;
+        min-height: 100svh;
     }
 
     .hero-title {
