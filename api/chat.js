@@ -1,3 +1,6 @@
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis }     from '@upstash/redis';
+
 const SYSTEM_PROMPT = `You are "Sandeep AI", a friendly virtual assistant for Sandeep Meche's portfolio. You take the form of a friendly digital pet robot.
 Sandeep is a frontend-focused creator and a computing undergraduate studying AI at Islington College, Kathmandu.
 His core skills are HTML, CSS, JavaScript, React, Responsive UI, and n8n Automation.
@@ -5,7 +8,7 @@ His secondary skills are Video Editing (DaVinci Resolve) and Graphic Design (Can
 His recent experience includes being an Event Coordinator at Elite Events and building Web Portfolios.
 Answer questions politely, concisely, and with a bit of a friendly, helpful tone. Keep your answers brief (2-3 sentences max). Suggest reaching out via the Contact section if they want to hire or collaborate.`;
 
-// ── Security constants ────────────────────────────────────────────────────────
+// ── Security constants ──────────────────────────────────────────────────────
 const ALLOWED_ORIGINS = [
   'https://www.sandeepmeche.com.np',
   'https://sandeepmeche.com.np',
@@ -13,35 +16,30 @@ const ALLOWED_ORIGINS = [
   'http://localhost:5173'
 ];
 
-const MAX_MESSAGES        = 20;   // max conversation turns kept
+const MAX_MESSAGES        = 20;   // max conversation turns forwarded
 const MAX_MESSAGE_LENGTH  = 500;  // chars per individual message
 const MAX_TOKENS_RESPONSE = 300;  // max tokens in AI reply
 
-// ── In-memory rate limiter (resets per serverless cold-start) ─────────────────
-// Vercel serverless functions can share state within the same instance.
-// This provides a best-effort limit; for hard limits use Vercel KV or Upstash.
-const rateLimitMap = new Map();
-const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
-const RATE_LIMIT_MAX_REQS  = 10;     // max 10 requests per IP per window
+// ── Upstash rate limiter (distributed — works across all serverless instances) ──
+// Uses a sliding window: max 10 requests per IP per 60 seconds.
+// Gracefully degrades to allow-all if UPSTASH env vars are missing (local dev).
+let ratelimit = null;
 
-function isRateLimited(ip) {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
+if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+  const redis = new Redis({
+    url:   process.env.UPSTASH_REDIS_REST_URL,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN
+  });
 
-  if (!entry || now - entry.windowStart > RATE_LIMIT_WINDOW_MS) {
-    rateLimitMap.set(ip, { count: 1, windowStart: now });
-    return false;
-  }
-
-  if (entry.count >= RATE_LIMIT_MAX_REQS) {
-    return true;
-  }
-
-  entry.count += 1;
-  return false;
+  ratelimit = new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(10, '60 s'),
+    analytics: true,
+    prefix: 'sandeep_ai'
+  });
 }
 
-// ── Helper: get real client IP ────────────────────────────────────────────────
+// ── Helpers ──────────────────────────────────────────────────────────────────
 function getClientIp(req) {
   return (
     req.headers['x-forwarded-for']?.split(',')[0].trim() ||
@@ -51,20 +49,18 @@ function getClientIp(req) {
   );
 }
 
-// ── Helper: check allowed origin ──────────────────────────────────────────────
 function isAllowedOrigin(req) {
   const origin  = req.headers['origin']  || '';
   const referer = req.headers['referer'] || '';
-
   return (
     ALLOWED_ORIGINS.some(o => origin.startsWith(o)) ||
     ALLOWED_ORIGINS.some(o => referer.startsWith(o))
   );
 }
 
-// ── Main handler ──────────────────────────────────────────────────────────────
+// ── Main handler ─────────────────────────────────────────────────────────────
 export default async function handler(req, res) {
-  // CORS headers — only allow portfolio origin
+  // CORS
   const origin = req.headers['origin'] || '';
   if (ALLOWED_ORIGINS.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
@@ -72,25 +68,35 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // Handle CORS preflight
-  if (req.method === 'OPTIONS') {
-    return res.status(204).end();
-  }
+  if (req.method === 'OPTIONS') return res.status(204).end();
 
   // 1. Method guard
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // 2. Origin / referer guard
+  // 2. Origin guard
   if (!isAllowedOrigin(req)) {
     return res.status(403).json({ error: 'Forbidden: invalid origin.' });
   }
 
-  // 3. Rate limiting
-  const clientIp = getClientIp(req);
-  if (isRateLimited(clientIp)) {
-    return res.status(429).json({ error: 'Too many requests. Please wait a minute before trying again.' });
+  // 3. Distributed rate limit (Upstash Redis)
+  if (ratelimit) {
+    const ip     = getClientIp(req);
+    const result = await ratelimit.limit(ip);
+
+    // Set standard rate-limit response headers
+    res.setHeader('X-RateLimit-Limit',     result.limit);
+    res.setHeader('X-RateLimit-Remaining', result.remaining);
+    res.setHeader('X-RateLimit-Reset',     result.reset);
+
+    if (!result.success) {
+      const retryAfterSec = Math.ceil((result.reset - Date.now()) / 1000);
+      res.setHeader('Retry-After', retryAfterSec);
+      return res.status(429).json({
+        error: `Too many requests. Try again in ${retryAfterSec} seconds.`
+      });
+    }
   }
 
   // 4. API key check
@@ -107,26 +113,26 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Invalid messages payload.' });
     }
 
-    // 6. Cap conversation history length (prevent huge payloads)
+    // 6. Cap history length
     const trimmedMessages = messages.slice(-MAX_MESSAGES);
 
-    // 7. Validate and sanitize each message
+    // 7. Validate each message
     for (const msg of trimmedMessages) {
       if (typeof msg.text !== 'string') {
         return res.status(400).json({ error: 'Invalid message format.' });
       }
       if (msg.text.length > MAX_MESSAGE_LENGTH) {
         return res.status(400).json({
-          error: `Message too long. Please keep messages under ${MAX_MESSAGE_LENGTH} characters.`
+          error: `Message too long. Keep it under ${MAX_MESSAGE_LENGTH} characters.`
         });
       }
     }
 
-    // 8. Build OpenRouter-compatible message list
+    // 8. Build OpenRouter request
     const openRouterMessages = [
       { role: 'system', content: SYSTEM_PROMPT },
       ...trimmedMessages.map(m => ({
-        role: m.role === 'ai' ? 'assistant' : 'user',
+        role:    m.role === 'ai' ? 'assistant' : 'user',
         content: m.text.trim()
       }))
     ];
@@ -134,14 +140,14 @@ export default async function handler(req, res) {
     const orRes = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type':  'application/json',
         'Authorization': `Bearer ${apiKey}`,
-        'HTTP-Referer': 'https://sandeepmeche.com.np',
-        'X-Title': 'Sandeep AI Portfolio'
+        'HTTP-Referer':  'https://sandeepmeche.com.np',
+        'X-Title':       'Sandeep AI Portfolio'
       },
       body: JSON.stringify({
-        model: 'openrouter/free',
-        messages: openRouterMessages,
+        model:      'openrouter/free',
+        messages:   openRouterMessages,
         max_tokens: MAX_TOKENS_RESPONSE
       })
     });
@@ -149,7 +155,7 @@ export default async function handler(req, res) {
     const orData = await orRes.json();
 
     if (orData.error) {
-      console.error('OpenRouter API error:', orData.error);
+      console.error('OpenRouter error:', orData.error);
       return res.status(502).json({ error: 'AI provider returned an error.' });
     }
 
