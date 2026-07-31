@@ -798,9 +798,15 @@ function HomePage() {
                     <div className="project-tags">
                       {card.tags.map((tag) => <span key={tag}>{tag}</span>)}
                     </div>
-                    <a href={card.link} className="project-link">
-                      {card.linkLabel} <i className="fas fa-arrow-right ml-1 text-xs" />
-                    </a>
+                    {card.link.startsWith('/') ? (
+                      <Link to={card.link} className="project-link">
+                        {card.linkLabel} <i className="fas fa-arrow-right ml-1 text-xs" />
+                      </Link>
+                    ) : (
+                      <a href={card.link} className="project-link">
+                        {card.linkLabel} <i className="fas fa-arrow-right ml-1 text-xs" />
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}
