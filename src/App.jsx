@@ -16,12 +16,6 @@ const navItems = [
 
 const experienceItems = [
   {
-    period: 'Contract - Kathmandu, Nepal',
-    title: 'Event Coordinator',
-    company: 'Elite Events',
-    description: 'Coordinate visual production, digital logistics, promotional content, and on-site media assets for premium event experiences.'
-  },
-  {
     period: '2023 - 2024',
     title: 'Web Portfolio Builder',
     company: 'Personal & Practice Projects',

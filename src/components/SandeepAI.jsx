@@ -15,9 +15,9 @@ export default function SandeepAI() {
     }
   }, [messages, isLoading]);
 
-  const handleSend = async (e) => {
-    e.preventDefault();
-    if (!input.trim()) return;
+  const handleSend = async (event) => {
+    event?.preventDefault();
+    if (!input.trim() || isLoading) return;
 
     const userText = input.trim();
     // Keep a local reference to send to the backend
@@ -30,17 +30,26 @@ export default function SandeepAI() {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
+          'Accept': 'application/json',
           'Content-Type': 'application/json',
+          'X-Requested-With': 'SandeepAI',
         },
         body: JSON.stringify({ messages: updatedMessages }),
       });
 
       if (!response.ok) {
-        throw new Error('Backend responded with an error.');
+        let message = 'Backend responded with an error.';
+        try {
+          const errorData = await response.json();
+          message = errorData.error || message;
+        } catch {
+          // Keep the generic message when the server response is not JSON.
+        }
+        throw new Error(message);
       }
 
       const data = await response.json();
-      setMessages(prev => [...prev, { role: 'ai', text: data.reply }]);
+      setMessages(prev => [...prev, { role: 'ai', text: data.reply || 'I could not generate a response.' }]);
     } catch (error) {
       console.error("Backend Proxy Error:", error);
       setMessages(prev => [...prev, { role: 'ai', text: 'Sorry, I encountered an error reaching the server. My circuits are tangled!' }]);
@@ -113,6 +122,11 @@ export default function SandeepAI() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  handleSend(event);
+                }
+              }}
               placeholder="Ask me something..."
               className="flex-1 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm text-white placeholder-slate-300 backdrop-blur-sm focus:border-red-500 focus:bg-white/10 focus:outline-none"
               disabled={isLoading}
