@@ -42,7 +42,7 @@ export function SiteHeader() {
       <div className='section-shell pt-4'>
         <div className='glass nav-glass flex h-14 items-center justify-between rounded-lg px-3 sm:px-4'>
           <SiteMark />
-          <nav className='hidden h-full items-center gap-1 lg:flex' aria-label='Primary navigation'>
+          <nav className='hidden h-full items-center gap-1 min-[900px]:flex' aria-label='Primary navigation'>
             {navigation.map((item) => {
               const isActive = activeSection === item.href;
               return (
@@ -53,7 +53,7 @@ export function SiteHeader() {
                 >
                   {isActive ? (
                     <motion.span
-                      className='absolute inset-0 -z-10 rounded-md bg-white/8'
+                      className='absolute inset-0 -z-10 rounded-md border border-red-500/25 bg-red-500/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.09),0_6px_18px_rgba(127,29,29,0.18)]'
                       layoutId='active-nav'
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
@@ -82,7 +82,7 @@ export function SiteHeader() {
               {mounted && resolvedTheme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <button
-              className='grid h-9 w-9 place-items-center rounded-md text-muted transition hover:bg-white/8 hover:text-foreground lg:hidden'
+              className='grid h-9 w-9 place-items-center rounded-md text-muted transition hover:bg-white/8 hover:text-foreground min-[900px]:hidden'
               onClick={() => setIsOpen((current) => !current)}
               aria-expanded={isOpen}
               aria-controls='mobile-navigation'
@@ -96,7 +96,7 @@ export function SiteHeader() {
         <AnimatePresence>
           {isOpen ? (
             <motion.nav
-              className='glass mt-2 rounded-lg p-2 lg:hidden'
+              className='glass mt-2 rounded-lg p-2 min-[900px]:hidden'
               id='mobile-navigation'
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}

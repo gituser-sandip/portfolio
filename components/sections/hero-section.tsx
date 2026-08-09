@@ -7,6 +7,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import { Badge } from '@/components/ui/badge';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { site } from '@/content/portfolio';
+import { HeroConstellation } from '@/components/sections/hero-constellation';
 
 const heroLines = [
   'Frontend engineer building fast,',
@@ -16,7 +17,7 @@ const heroLines = [
 
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
-  const [pointer, setPointer] = React.useState({ x: 50, y: 32 });
+  const [pointer, setPointer] = React.useState({ x: 50, y: 32, active: false });
   const { scrollY } = useScroll();
   const portraitY = useTransform(scrollY, [0, 900], [0, -42]);
   const portraitRotate = useTransform(scrollY, [0, 900], [0, 1.8]);
@@ -27,7 +28,12 @@ export function HeroSection() {
     setPointer({
       x: ((event.clientX - bounds.left) / bounds.width) * 100,
       y: ((event.clientY - bounds.top) / bounds.height) * 100,
+      active: true,
     });
+  }
+
+  function resetPointer() {
+    setPointer({ x: 50, y: 32, active: false });
   }
 
   return (
@@ -35,8 +41,10 @@ export function HeroSection() {
       className='relative isolate min-h-[48rem] overflow-hidden pt-32 sm:pt-36'
       id='top'
       onPointerMove={trackPointer}
-      >
+      onPointerLeave={resetPointer}
+    >
       <div className='canvas-grid pointer-events-none absolute inset-0 -z-20 opacity-80' />
+      <HeroConstellation pointer={{ x: pointer.x / 100, y: pointer.y / 100, active: pointer.active }} reducedMotion={Boolean(shouldReduceMotion)} />
       <div className='hero-signal-line pointer-events-none left-[-7rem] top-[19rem] -z-10 hidden lg:block' />
       <div className='hero-signal-line hero-signal-line-delay pointer-events-none right-[-7rem] top-[30rem] -z-10 hidden lg:block' />
       <motion.div
@@ -56,18 +64,20 @@ export function HeroSection() {
         }}
       />
       <motion.div
-        className='pointer-events-none absolute -top-28 right-[8%] z-20 hidden w-28 origin-top xl:block'
+        className='pointer-events-none absolute right-4 top-10 z-20 hidden w-24 origin-top min-[900px]:block lg:right-[5%] lg:w-32'
         animate={shouldReduceMotion ? undefined : { rotate: [-2, 2, -2], y: [0, 4, 0] }}
         transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden='true'
       >
-        <span className='absolute bottom-[68%] left-1/2 h-48 w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,rgba(248,250,252,0.86)_22%,rgba(248,250,252,0.56))] shadow-[0_0_10px_rgba(248,250,252,0.28)]' />
+        <span className='absolute bottom-[78%] left-1/2 h-44 w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,rgba(248,250,252,0.04),rgba(248,250,252,0.9)_18%,rgba(248,250,252,0.62)_86%,rgba(248,250,252,0.2))] shadow-[0_0_10px_rgba(248,250,252,0.42)]' />
+        <span className='absolute bottom-[77%] left-[47%] h-32 w-px -translate-x-1/2 rotate-[7deg] bg-[linear-gradient(to_bottom,transparent,rgba(248,250,252,0.34),transparent)]' />
+        <span className='absolute bottom-[77%] left-[53%] h-32 w-px -translate-x-1/2 -rotate-[7deg] bg-[linear-gradient(to_bottom,transparent,rgba(248,250,252,0.34),transparent)]' />
         <Image
           className='relative h-auto w-full drop-shadow-[0_18px_28px_rgba(0,0,0,0.45)]'
           src='/images/lil-spidey-transparent.png'
           alt=''
-          width={148}
-          height={196}
+          width={168}
+          height={222}
           priority
         />
       </motion.div>
@@ -93,7 +103,7 @@ export function HeroSection() {
               Sandeep Meche / Frontend engineer
             </motion.p>
             <motion.h1
-              className='mt-5 max-w-5xl text-balance text-4xl font-semibold leading-[1.04] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl'
+              className='mt-5 max-w-5xl text-balance text-4xl font-semibold leading-[1.04] tracking-tight text-foreground min-[900px]:max-w-[calc(100%-8rem)] sm:text-5xl md:text-6xl lg:max-w-5xl lg:text-7xl'
             >
               {heroLines.map((line, index) => (
                 <span className='block overflow-hidden' key={line}>
