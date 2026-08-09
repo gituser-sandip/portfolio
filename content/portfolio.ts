@@ -29,8 +29,8 @@ export const projects: Project[] = [
     valueProposition: 'A high-signal digital presence engineered to make technical quality visible in seconds.',
     description:
       'A content-led portfolio system that turns interface craft, project thinking, and performance standards into a clear hiring narrative.',
-    image: '/images/portfolio7.JPG',
-    imageAlt: 'Sandeep Meche portfolio interface preview',
+    image: '/images/case-study-performance-system.png',
+    imageAlt: 'Performance-focused portfolio system interface',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     metrics: [
       { label: 'Lighthouse', value: '98', detail: 'performance target' },
@@ -91,8 +91,8 @@ export const projects: Project[] = [
     valueProposition: 'A product discovery flow designed for faster decisions across every screen size.',
     description:
       'A responsive commerce interface focused on clearer browsing, resilient component states, and a friction-light path from discovery to intent.',
-    image: '/images/portfolio6.JPG',
-    imageAlt: 'Responsive commerce interface preview',
+    image: '/images/case-study-commerce-experience.png',
+    imageAlt: 'Responsive commerce product discovery interface',
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'REST APIs'],
     metrics: [
       { label: 'Mobile', value: '98', detail: 'performance target' },
@@ -153,8 +153,8 @@ export const projects: Project[] = [
     valueProposition: 'A calm, observable interface for monitoring work that happens behind the scenes.',
     description:
       'A UI concept for turning automation status, exceptions, and delivery health into an interface that teams can understand at a glance.',
-    image: '/images/portfolio8.JPG',
-    imageAlt: 'Workflow automation console interface preview',
+    image: '/images/case-study-automation-console.png',
+    imageAlt: 'Workflow automation monitoring console',
     stack: ['Next.js', 'Firebase', 'n8n', 'Framer Motion'],
     metrics: [
       { label: 'Uptime', value: '99.9%', detail: 'service target' },
