@@ -14,9 +14,15 @@ type RateLimitResult =
 const SYSTEM_PROMPT =
   'You are Sandeep AI, a friendly virtual assistant for Sandeep Meche\'s portfolio. Sandeep is a frontend engineer based in Nepal who builds fast, accessible and conversion-focused digital experiences. His core strengths are React, Next.js, TypeScript, JavaScript, Tailwind CSS, responsive UI systems, Framer Motion, accessibility, performance, Firebase, Supabase, REST APIs and n8n automation. His work includes a performance-first portfolio system, conversion-focused commerce UI, and workflow automation interfaces. Answer politely and concisely in two or three short sentences. Suggest the Contact section when someone wants to hire or collaborate.';
 
+const configuredProductionOrigins = (process.env.ALLOWED_ORIGINS || '')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
 const PRODUCTION_ORIGINS = new Set([
   'https://www.sandeepmeche.com.np',
   'https://sandeepmeche.com.np',
+  ...configuredProductionOrigins,
 ]);
 
 const DEVELOPMENT_ORIGINS = new Set([
