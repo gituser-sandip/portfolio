@@ -75,11 +75,44 @@
   }
 
   .glass {
-    @apply border border-white/10 bg-black/45 backdrop-blur-xl;
+    @apply border border-white/15 bg-black/55;
+    backdrop-filter: blur(22px) saturate(150%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    box-shadow:
+      0 14px 38px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .dark .glass {
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    background:
+      linear-gradient(115deg, rgba(24, 24, 24, 0.76), rgba(7, 7, 7, 0.5)),
+      rgba(8, 8, 8, 0.5);
+  }
+
+  .light .glass {
+    border-color: rgba(0, 0, 0, 0.09);
+    background:
+      linear-gradient(115deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.62)),
+      rgba(255, 255, 255, 0.68);
+    box-shadow:
+      0 14px 34px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  }
+
+  .nav-glass {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .nav-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0.5px 1rem auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
+    opacity: 0.75;
+    pointer-events: none;
   }
 
   .canvas-grid {
@@ -106,6 +139,32 @@
   .project-image-mask {
     mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
   }
+
+  .hero-signal-line {
+    position: absolute;
+    width: min(34rem, 48vw);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(248, 113, 113, 0.78), transparent);
+    transform-origin: left;
+    animation: signalSweep 7.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    opacity: 0;
+  }
+
+  .hero-signal-line::after {
+    content: '';
+    position: absolute;
+    right: 14%;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: #f87171;
+    box-shadow: 0 0 0 5px rgba(248, 113, 113, 0.12), 0 0 16px rgba(248, 113, 113, 0.8);
+  }
+
+  .hero-signal-line-delay {
+    animation-delay: 2.8s;
+  }
 }
 
 @layer utilities {
@@ -119,6 +178,26 @@
 
   .animate-delay-300 {
     animation-delay: 300ms;
+  }
+}
+
+@keyframes signalSweep {
+  0%,
+  12% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  28%,
+  68% {
+    opacity: 0.72;
+    transform: scaleX(1);
+  }
+
+  84%,
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
   }
 }
 

@@ -3,14 +3,23 @@
 import * as React from 'react';
 import Image from 'next/image';
 import { ArrowDownRight, ArrowUpRight, Download, Github, Linkedin, Mail, MapPin } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { site } from '@/content/portfolio';
 
+const heroLines = [
+  'Frontend engineer building fast,',
+  'accessible, and conversion-focused',
+  'digital experiences.',
+];
+
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
   const [pointer, setPointer] = React.useState({ x: 50, y: 32 });
+  const { scrollY } = useScroll();
+  const portraitY = useTransform(scrollY, [0, 900], [0, -42]);
+  const portraitRotate = useTransform(scrollY, [0, 900], [0, 1.8]);
 
   function trackPointer(event: React.PointerEvent<HTMLElement>) {
     if (shouldReduceMotion) return;
@@ -26,8 +35,10 @@ export function HeroSection() {
       className='relative isolate min-h-[48rem] overflow-hidden pt-32 sm:pt-36'
       id='top'
       onPointerMove={trackPointer}
-    >
+      >
       <div className='canvas-grid pointer-events-none absolute inset-0 -z-20 opacity-80' />
+      <div className='hero-signal-line pointer-events-none left-[-7rem] top-[19rem] -z-10 hidden lg:block' />
+      <div className='hero-signal-line hero-signal-line-delay pointer-events-none right-[-7rem] top-[30rem] -z-10 hidden lg:block' />
       <motion.div
         className='pointer-events-none absolute -z-10 h-[32rem] w-[32rem] rounded-full blur-3xl'
         animate={
@@ -44,6 +55,22 @@ export function HeroSection() {
             'radial-gradient(circle, rgba(239,68,68,0.18) 0%, rgba(185,28,28,0.07) 34%, transparent 69%)',
         }}
       />
+      <motion.div
+        className='pointer-events-none absolute -top-28 right-[8%] z-20 hidden w-28 origin-top xl:block'
+        animate={shouldReduceMotion ? undefined : { rotate: [-2, 2, -2], y: [0, 4, 0] }}
+        transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
+        aria-hidden='true'
+      >
+        <span className='absolute bottom-[68%] left-1/2 h-48 w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,rgba(248,250,252,0.86)_22%,rgba(248,250,252,0.56))] shadow-[0_0_10px_rgba(248,250,252,0.28)]' />
+        <Image
+          className='relative h-auto w-full drop-shadow-[0_18px_28px_rgba(0,0,0,0.45)]'
+          src='/images/lil-spidey-transparent.png'
+          alt=''
+          width={148}
+          height={196}
+          priority
+        />
+      </motion.div>
       <div className='section-shell relative'>
         <div className='grid items-center gap-14 pb-24 lg:grid-cols-[minmax(0,1.16fr)_minmax(22rem,0.66fr)] lg:gap-16 lg:pb-32'>
           <div>
@@ -67,11 +94,23 @@ export function HeroSection() {
             </motion.p>
             <motion.h1
               className='mt-5 max-w-5xl text-balance text-4xl font-semibold leading-[1.04] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl'
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.12, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             >
-              Frontend engineer building fast, accessible, and conversion-focused digital experiences.
+              {heroLines.map((line, index) => (
+                <span className='block overflow-hidden' key={line}>
+                  <motion.span
+                    className='block'
+                    initial={shouldReduceMotion ? false : { opacity: 0, y: '110%' }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.12 + index * 0.09,
+                      duration: 0.72,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                  >
+                    {line}
+                  </motion.span>
+                </span>
+              ))}
             </motion.h1>
             <motion.p
               className='mt-7 max-w-2xl text-pretty text-base leading-7 text-muted sm:text-lg sm:leading-8'
@@ -126,6 +165,7 @@ export function HeroSection() {
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.96, y: 22 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            style={shouldReduceMotion ? undefined : { y: portraitY, rotate: portraitRotate }}
           >
             <div className='absolute -inset-6 -z-10 rounded-full bg-red-500/10 blur-3xl' />
             <div className='relative aspect-[4/4.7] overflow-hidden rounded-lg border border-line bg-surface shadow-lift'>
@@ -160,6 +200,14 @@ export function HeroSection() {
             >
               <p className='font-mono text-[10px] uppercase tracking-[0.14em] text-muted'>Core Web Vitals</p>
               <p className='mt-1 text-sm font-medium text-foreground'>LCP target: 1.4s</p>
+            </motion.div>
+            <motion.div
+              className='absolute -right-5 top-1/3 hidden rounded-md border border-line bg-surface px-4 py-3 shadow-lift lg:block'
+              animate={shouldReduceMotion ? undefined : { y: [0, 7, 0] }}
+              transition={{ duration: 5.4, delay: 0.8, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <p className='font-mono text-[10px] uppercase tracking-[0.14em] text-muted'>Delivery signal</p>
+              <p className='mt-1 inline-flex items-center gap-2 text-sm font-medium text-foreground'><span className='h-1.5 w-1.5 rounded-full bg-emerald-500' /> Build ready</p>
             </motion.div>
           </motion.div>
         </div>

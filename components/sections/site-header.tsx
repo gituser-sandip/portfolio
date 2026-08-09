@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, Moon, Sun, X } from 'lucide-react';
+import { BotMessageSquare, Menu, Moon, Sun, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { navigation } from '@/content/portfolio';
 import { SiteMark } from '@/components/site-mark';
@@ -40,7 +40,7 @@ export function SiteHeader() {
   return (
     <header className='fixed inset-x-0 top-0 z-50'>
       <div className='section-shell pt-4'>
-        <div className='glass flex h-14 items-center justify-between rounded-lg px-3 sm:px-4'>
+        <div className='glass nav-glass flex h-14 items-center justify-between rounded-lg px-3 sm:px-4'>
           <SiteMark />
           <nav className='hidden h-full items-center gap-1 lg:flex' aria-label='Primary navigation'>
             {navigation.map((item) => {
@@ -64,6 +64,15 @@ export function SiteHeader() {
             })}
           </nav>
           <div className='flex items-center gap-1'>
+            <button
+              className='grid h-9 w-9 place-items-center rounded-md text-muted transition hover:bg-red-500/10 hover:text-red-400'
+              onClick={() => window.dispatchEvent(new Event('open-sandeep-ai'))}
+              aria-label='Open Sandeep AI'
+              title='Open Sandeep AI'
+              type='button'
+            >
+              <BotMessageSquare size={16} />
+            </button>
             <button
               className='grid h-9 w-9 place-items-center rounded-md text-muted transition hover:bg-white/8 hover:text-foreground'
               onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}

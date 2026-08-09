@@ -50,19 +50,13 @@ const educationItems = [
   }
 ];
 
-const technicalSkills = [
-  { label: 'Frontend Development', value: '95%' },
-  { label: 'Responsive UI', value: '90%' },
-  { label: 'JavaScript', value: '85%' },
-  { label: 'Video Editing', value: '55%' },
-  { label: 'Graphic Design', value: '50%' }
-];
-
-const professionalSkills = [
-  { label: 'Aesthetic Judgment', value: '95%' },
-  { label: 'Communication', value: '70%' },
-  { label: 'Creative Direction', value: '85%' },
-  { label: 'Problem Solving', value: '90%' }
+const cosmosSkills = [
+  { icon: 'fa-code', title: 'Frontend', level: 5, levelText: 'Advanced', description: 'HTML, CSS, JavaScript, React', category: 'technical', color: '#06b6d4', relatedTags: ['HTML', 'CSS', 'JavaScript', 'React'] },
+  { icon: 'fa-mobile-screen-button', title: 'Responsive UI', level: 4, levelText: 'Proficient', description: 'Layouts built for real device behavior', category: 'technical', color: '#06b6d4', relatedTags: ['CSS', 'HTML'] },
+  { icon: 'fa-wand-magic-sparkles', title: 'Visual Polish', level: 4, levelText: 'Proficient', description: 'Typography, spacing, color, and presentation', category: 'creative', color: '#ec4899', relatedTags: ['Canva'] },
+  { icon: 'fa-diagram-project', title: 'Automation', level: 3, levelText: 'Intermediate', description: 'n8n-style flows, forms, alerts, and simple logic', category: 'technical', color: '#06b6d4', relatedTags: ['n8n'] },
+  { icon: 'fa-film', title: 'Editing', level: 3, levelText: 'Intermediate', description: 'Short-form edits, captions, and content support', category: 'creative', color: '#ec4899', relatedTags: ['DaVinci Resolve'] },
+  { icon: 'fa-comments', title: 'Communication', level: 4, levelText: 'Proficient', description: 'Clear briefs, client updates, and practical delivery', category: 'soft', color: '#eab308', relatedTags: [] }
 ];
 
 const projectCards = [
@@ -381,6 +375,7 @@ function HomePage() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [typedRole, setTypedRole] = useState('');
   const [isDeletingRole, setIsDeletingRole] = useState(false);
+  const [activeTag, setActiveTag] = useState(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle('light', theme === 'light');
@@ -732,32 +727,64 @@ function HomePage() {
               </div>
 
               <div className="skill-orbit-deck">
-                {[
-                  ['fa-code', 'Frontend', technicalSkills[0].value, 'HTML, CSS, JavaScript, React'],
-                  ['fa-mobile-screen-button', 'Responsive UI', technicalSkills[1].value, 'Layouts built for real device behavior'],
-                  ['fa-wand-magic-sparkles', 'Visual Polish', professionalSkills[0].value, 'Typography, spacing, color, and presentation'],
-                  ['fa-diagram-project', 'Automation', '70%', 'n8n-style flows, forms, alerts, and simple logic'],
-                  ['fa-film', 'Editing', technicalSkills[3].value, 'Short-form edits, captions, and content support'],
-                  ['fa-comments', 'Communication', professionalSkills[1].value, 'Clear briefs, client updates, and practical delivery']
-                ].map(([icon, title, value, description], index) => (
-                  <article key={title} className={`skill-cosmos-card skill-card-${index + 1}`}>
-                    <i className={`fas ${icon}`} />
-                    <div>
-                      <span>{title}</span>
-                      <strong>{value}</strong>
-                    </div>
-                    <p>{description}</p>
-                    <div className="progress-bar">
-                      <div className="progress-fill" data-width={value} style={{ width: '0%' }} />
-                    </div>
-                  </article>
-                ))}
+                {cosmosSkills.map((skill, index) => {
+                  const isActive = activeTag && skill.relatedTags.includes(activeTag);
+                  return (
+                    <article 
+                      key={skill.title} 
+                      className={`skill-cosmos-card skill-card-${index + 1} ${isActive ? 'active-skill' : ''} group`}
+                      style={{ '--category-color': skill.color }}
+                      onMouseMove={(e) => {
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        const rotateX = ((y - centerY) / centerY) * -15;
+                        const rotateY = ((x - centerX) / centerX) * 15;
+                        e.currentTarget.style.setProperty('--rx', `${rotateX}deg`);
+                        e.currentTarget.style.setProperty('--ry', `${rotateY}deg`);
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.setProperty('--rx', '0deg');
+                        e.currentTarget.style.setProperty('--ry', '0deg');
+                      }}
+                    >
+                      <i className={`fas ${skill.icon}`} style={{ color: skill.color }} />
+                      <div>
+                        <span>{skill.title}</span>
+                        <strong style={{ color: skill.color }}>{skill.levelText}</strong>
+                      </div>
+                      <p>{skill.description}</p>
+                      <div className="proficiency-ring" style={{ '--ring-color': skill.color }}>
+                        <svg viewBox="0 0 36 36" className="ring-svg">
+                          <circle className="ring-bg" cx="18" cy="18" r="15.5" />
+                          <circle 
+                            className="ring-fill" 
+                            cx="18" cy="18" r="15.5"
+                            style={{
+                              strokeDasharray: `${(skill.level / 5) * 97.39} 97.39`,
+                              stroke: skill.color
+                            }}
+                          />
+                        </svg>
+                        <span className="ring-label" style={{ color: skill.color }}>{skill.level}/5</span>
+                      </div>
+                    </article>
+                  );
+                })}
               </div>
             </div>
 
             <div className="scroll-animate fade-up skill-tags skill-toolbelt">
               {['HTML', 'CSS', 'JavaScript', 'React', 'Python', 'PHP', 'SQL', 'Canva', 'DaVinci Resolve', 'n8n'].map((tool) => (
-                <span key={tool}>{tool}</span>
+                <span 
+                  key={tool}
+                  onMouseEnter={() => setActiveTag(tool)}
+                  onMouseLeave={() => setActiveTag(null)}
+                >
+                  {tool}
+                </span>
               ))}
             </div>
           </section>

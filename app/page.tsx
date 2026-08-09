@@ -8,10 +8,13 @@ import { SiteFooter } from '@/components/sections/site-footer';
 import { SiteHeader } from '@/components/sections/site-header';
 import { SkillsSection } from '@/components/sections/skills-section';
 import { TestimonialsSection } from '@/components/sections/testimonials-section';
+import { SandeepAi } from '@/components/sections/sandeep-ai';
+import { ScrollProgress } from '@/components/ui/scroll-progress';
 
 export default function HomePage() {
   return (
     <div className='relative overflow-x-clip'>
+      <ScrollProgress />
       <SiteHeader />
       <main>
         <HeroSection />
@@ -24,6 +27,7 @@ export default function HomePage() {
         <ContactSection />
       </main>
       <SiteFooter />
+      <SandeepAi />
     </div>
   );
 }
