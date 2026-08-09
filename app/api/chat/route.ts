@@ -44,6 +44,7 @@ const MAX_MESSAGE_LENGTH = 500;
 const MAX_TOTAL_MESSAGE_LENGTH = 2500;
 const MAX_TOKENS_RESPONSE = 220;
 const REQUEST_TIMEOUT_MS = 15000;
+const DEFAULT_CHAT_MODEL = 'openai/gpt-oss-20b:free';
 const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL_ENV === 'production';
 const requireDistributedRateLimit = process.env.REQUIRE_DISTRIBUTED_RATE_LIMIT !== 'false';
 const allowedOrigins = new Set([
@@ -263,7 +264,7 @@ export async function POST(request: NextRequest) {
         'X-Title': 'Sandeep AI Portfolio',
       },
       body: JSON.stringify({
-        model: process.env.OPENROUTER_MODEL || 'openrouter/free',
+        model: process.env.OPENROUTER_MODEL || DEFAULT_CHAT_MODEL,
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           ...normalized.messages.map((message) => ({
