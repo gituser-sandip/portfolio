@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { site } from '@/content/portfolio';
 import { HeroConstellation } from '@/components/sections/hero-constellation';
+import { ResumePreview } from '@/components/ui/resume-preview';
 
 const heroLines = [
   'Frontend engineer building fast,',
@@ -165,9 +166,9 @@ export function HeroSection() {
               <a className='inline-flex items-center gap-2 transition hover:text-foreground' href={site.linkedin} target='_blank' rel='noreferrer'>
                 <Linkedin size={15} className='text-red-400' /> LinkedIn
               </a>
-              <a className='inline-flex items-center gap-2 transition hover:text-foreground' href={site.resume} target='_blank' rel='noreferrer'>
+              <ResumePreview className='inline-flex items-center gap-2 transition hover:text-foreground' resumeUrl={site.resume}>
                 <Download size={15} className='text-red-400' /> Resume
-              </a>
+              </ResumePreview>
             </motion.div>
           </div>
           <motion.div
