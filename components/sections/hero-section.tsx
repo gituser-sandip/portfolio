@@ -64,14 +64,14 @@ export function HeroSection() {
         }}
       />
       <motion.div
-        className='pointer-events-none absolute right-4 top-10 z-20 hidden w-24 origin-top min-[900px]:block lg:right-[5%] lg:w-32'
+        className='pointer-events-none absolute right-10 top-24 z-20 w-14 origin-top sm:right-4 sm:top-20 sm:w-20 min-[900px]:right-4 min-[900px]:top-10 min-[900px]:w-24 lg:right-[5%] lg:w-32'
         animate={shouldReduceMotion ? undefined : { rotate: [-2, 2, -2], y: [0, 4, 0] }}
         transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden='true'
       >
-        <span className='absolute bottom-[78%] left-1/2 h-44 w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,rgba(248,250,252,0.04),rgba(248,250,252,0.9)_18%,rgba(248,250,252,0.62)_86%,rgba(248,250,252,0.2))] shadow-[0_0_10px_rgba(248,250,252,0.42)]' />
-        <span className='absolute bottom-[77%] left-[47%] h-32 w-px -translate-x-1/2 rotate-[7deg] bg-[linear-gradient(to_bottom,transparent,rgba(248,250,252,0.34),transparent)]' />
-        <span className='absolute bottom-[77%] left-[53%] h-32 w-px -translate-x-1/2 -rotate-[7deg] bg-[linear-gradient(to_bottom,transparent,rgba(248,250,252,0.34),transparent)]' />
+        <span className='absolute bottom-[78%] left-1/2 h-28 w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,rgba(248,250,252,0.04),rgba(248,250,252,0.9)_18%,rgba(248,250,252,0.62)_86%,rgba(248,250,252,0.2))] shadow-[0_0_10px_rgba(248,250,252,0.42)] sm:h-44' />
+        <span className='absolute bottom-[77%] left-[47%] h-24 w-px -translate-x-1/2 rotate-[7deg] bg-[linear-gradient(to_bottom,transparent,rgba(248,250,252,0.34),transparent)] sm:h-32' />
+        <span className='absolute bottom-[77%] left-[53%] h-24 w-px -translate-x-1/2 -rotate-[7deg] bg-[linear-gradient(to_bottom,transparent,rgba(248,250,252,0.34),transparent)] sm:h-32' />
         <Image
           className='relative h-auto w-full drop-shadow-[0_18px_28px_rgba(0,0,0,0.45)]'
           src='/images/lil-spidey-transparent.png'
