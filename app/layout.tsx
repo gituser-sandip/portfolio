@@ -99,7 +99,7 @@ const personSchema = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={geistSans.variable + ' ' + geistMono.variable + ' font-sans'}>
+      <body suppressHydrationWarning className={geistSans.variable + ' ' + geistMono.variable + ' font-sans'}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
