@@ -152,6 +152,20 @@ function normalizeMessages(messages: unknown): { messages?: ChatMessage[]; error
   return { messages: normalized as ChatMessage[] };
 }
 
+function fallbackReply(messages: ChatMessage[]) {
+  const question = messages[messages.length - 1]?.text.toLowerCase() || '';
+
+  if (/hire|collaborat|available|contact|freelance/.test(question)) {
+    return 'Sandeep is open to focused remote frontend and UI engineering engagements. Please use the Contact section to share the product, scope, and timeline.';
+  }
+
+  if (/project|work|case stud|build/.test(question)) {
+    return 'Sandeep builds fast, accessible, conversion-focused web experiences, including React fitness platforms, property discovery interfaces, and workflow tools. His case studies show the product decisions behind each build.';
+  }
+
+  return 'Sandeep is a frontend engineer based in Nepal, focused on React, Next.js, TypeScript, Tailwind CSS, accessible UI systems, and performance. For project details or availability, please use the Contact section.';
+}
+
 async function enforceRateLimit(request: NextRequest, responseHeaders: Headers): Promise<RateLimitResult> {
   if (!ratelimit) {
     if (isProduction && requireDistributedRateLimit) {
@@ -281,7 +295,8 @@ export async function POST(request: NextRequest) {
     const reply = providerData.choices?.[0]?.message?.content?.trim();
 
     if (!providerResponse.ok || providerData.error || !reply) {
-      return NextResponse.json({ error: 'AI provider returned an error.' }, { status: 502, headers: responseHeaders });
+      console.warn('Sandeep AI provider unavailable', { status: providerResponse.status });
+      return NextResponse.json({ reply: fallbackReply(normalized.messages) }, { status: 200, headers: responseHeaders });
     }
 
     return NextResponse.json({ reply }, { status: 200, headers: responseHeaders });
@@ -289,7 +304,8 @@ export async function POST(request: NextRequest) {
     const message = error instanceof Error && error.name === 'AbortError'
       ? 'The AI provider timed out. Please try again.'
       : 'Failed to communicate with the AI provider.';
-    return NextResponse.json({ error: message }, { status: 500, headers: responseHeaders });
+    console.warn('Sandeep AI provider request failed', { message });
+    return NextResponse.json({ reply: fallbackReply(normalized.messages) }, { status: 200, headers: responseHeaders });
   } finally {
     clearTimeout(timeout);
   }
