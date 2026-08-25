@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import '@/styles/globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { site } from '@/content/portfolio';
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -108,6 +109,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
+        <Analytics />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
