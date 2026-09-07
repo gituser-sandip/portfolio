@@ -44,7 +44,7 @@ const MAX_MESSAGE_LENGTH = 500;
 const MAX_TOTAL_MESSAGE_LENGTH = 2500;
 const MAX_TOKENS_RESPONSE = 220;
 const REQUEST_TIMEOUT_MS = 15000;
-const DEFAULT_CHAT_MODEL = 'openai/gpt-oss-20b:free';
+const DEFAULT_CHAT_MODEL = 'cohere/north-mini-code:free';
 const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL_ENV === 'production';
 const requireDistributedRateLimit = process.env.REQUIRE_DISTRIBUTED_RATE_LIMIT !== 'false';
 const allowedOrigins = new Set([

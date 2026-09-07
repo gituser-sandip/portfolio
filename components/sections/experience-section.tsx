@@ -13,6 +13,7 @@ export function ExperienceSection() {
       <div className='section-shell'>
         <div className='grid gap-12 lg:grid-cols-[minmax(0,0.66fr)_minmax(30rem,1.34fr)] lg:gap-20'>
           <SectionHeading
+            className='lg:sticky lg:top-[150px] lg:self-start'
             eyebrow='Experience'
             title='Growing through real interfaces and focused delivery.'
             description='A steady foundation in computing, paired with hands-on frontend work and an ongoing practice of building better user-facing systems.'

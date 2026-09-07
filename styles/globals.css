@@ -64,6 +64,23 @@
     @apply border-t border-line/80;
   }
 
+  .portfolio-atmosphere {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .dark .portfolio-atmosphere {
+    background-color: #050505;
+    background-image:
+      radial-gradient(ellipse 62% 48% at -16% -8%, rgba(127, 29, 29, 0.13), transparent 80%),
+      radial-gradient(ellipse 50% 42% at 108% 34%, rgba(69, 10, 10, 0.25), transparent 74%),
+      radial-gradient(ellipse 46% 36% at 50% 104%, rgba(92, 17, 25, 0.14), transparent 74%),
+      linear-gradient(180deg, #090909 0%, #050505 55%, #0a0708 100%);
+    background-position: 0% 0%, 100% 34%, 50% 104%, center;
+    background-size: 120% 120%, 120% 120%, 120% 120%, auto;
+    animation: portfolioAtmosphereShift 28s ease-in-out infinite alternate;
+  }
+
   .eyebrow {
     @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-muted;
   }
@@ -233,7 +250,25 @@
   }
 }
 
+@keyframes portfolioAtmosphereShift {
+  0% {
+    background-position: 0% 0%, 100% 34%, 50% 104%, center;
+  }
+
+  50% {
+    background-position: 8% 5%, 92% 42%, 44% 96%, center;
+  }
+
+  100% {
+    background-position: 2% 10%, 96% 28%, 56% 100%, center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .dark .portfolio-atmosphere {
+    animation: none;
+  }
+
   *,
   *::before,
   *::after {

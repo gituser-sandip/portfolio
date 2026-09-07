@@ -42,7 +42,7 @@ export function SiteHeader() {
       <div className='section-shell pt-4'>
         <div className='glass nav-glass flex h-14 items-center justify-between rounded-lg px-3 sm:px-4'>
           <SiteMark />
-          <nav className='hidden h-full items-center gap-1 min-[900px]:flex' aria-label='Primary navigation'>
+          <nav className='hidden h-full items-center gap-1 min-[1100px]:flex' aria-label='Primary navigation'>
             {navigation.map((item) => {
               const isActive = activeSection === item.href;
               return (
@@ -50,6 +50,7 @@ export function SiteHeader() {
                   className='relative rounded-md px-3 py-2 text-xs font-medium text-muted transition-colors hover:text-foreground'
                   href={item.href}
                   key={item.href}
+                  aria-current={isActive ? 'location' : undefined}
                 >
                   {isActive ? (
                     <motion.span
@@ -82,7 +83,7 @@ export function SiteHeader() {
               {mounted && resolvedTheme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <button
-              className='grid h-9 w-9 place-items-center rounded-md text-muted transition hover:bg-white/8 hover:text-foreground min-[900px]:hidden'
+              className='grid h-9 w-9 place-items-center rounded-md text-muted transition hover:bg-white/8 hover:text-foreground min-[1100px]:hidden'
               onClick={() => setIsOpen((current) => !current)}
               aria-expanded={isOpen}
               aria-controls='mobile-navigation'
@@ -96,7 +97,7 @@ export function SiteHeader() {
         <AnimatePresence>
           {isOpen ? (
             <motion.nav
-              className='glass mt-2 rounded-lg p-2 min-[900px]:hidden'
+              className='glass mt-2 rounded-lg p-2 min-[1100px]:hidden'
               id='mobile-navigation'
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -110,6 +111,7 @@ export function SiteHeader() {
                   href={item.href}
                   key={item.href}
                   onClick={closeMenu}
+                  aria-current={activeSection === item.href ? 'location' : undefined}
                 >
                   {item.label}
                 </a>
