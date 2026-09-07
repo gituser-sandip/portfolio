@@ -45,3 +45,13 @@ export type TimelineItem = {
   description: string;
   tags: string[];
 };
+
+export type Certification = {
+  id: string;
+  title: string;
+  issuer?: string;
+  issueDate?: string;
+  credentialId?: string;
+  skills: string[];
+  certificateUrl?: string;
+};

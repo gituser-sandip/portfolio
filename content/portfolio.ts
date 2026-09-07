@@ -1,4 +1,4 @@
-import type { Project, SkillGroup, TimelineItem } from '@/types/portfolio';
+import type { Certification, Project, SkillGroup, TimelineItem } from '@/types/portfolio';
 
 export const site = {
   name: 'Sandeep Meche',
@@ -17,6 +17,7 @@ export const navigation = [
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Certifications', href: '#certifications' },
   { label: 'GitHub', href: '#github' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -265,6 +266,62 @@ export const experience: TimelineItem[] = [
     description:
       'Studying design systems, browser capabilities, accessibility patterns, and the performance details that make interfaces feel immediate.',
     tags: ['Design systems', 'Core Web Vitals'],
+  },
+];
+
+// Sourced from the Certifications section on page 3 of the published CV.
+// Dates and issuers are omitted where the source does not establish them.
+export const certifications: Certification[] = [
+  {
+    id: 'web-development-diploma',
+    title: 'Web Development Diploma',
+    skills: ['Web development'],
+    // The CV's link opens the Excel certificate, so use the CV until corrected.
+  },
+  {
+    id: 'html-certification',
+    title: 'HTML Certification',
+    skills: ['HTML'],
+    certificateUrl: 'https://drive.google.com/file/d/1ilmBKQIeLwl2MggnvB_2Bb8ZfoxToVgg/view?usp=sharing',
+  },
+  {
+    id: 'aws-cloud-foundations',
+    title: 'AWS Academy Cloud Foundations',
+    issuer: 'AWS Academy',
+    skills: ['Cloud computing', 'AWS'],
+    certificateUrl: 'https://drive.google.com/file/d/1fP69FFOlbI1DcFx_6kWxTCxNV4U56O0F/view?usp=sharing',
+  },
+  {
+    id: 'aws-machine-learning-foundations',
+    title: 'AWS Academy Machine Learning Foundations',
+    issuer: 'AWS Academy',
+    skills: ['Machine learning', 'AWS'],
+    certificateUrl: 'https://drive.google.com/file/d/1g_nX7RTC9LkWUBEzDGk4aumPv2a4jMtB/view?usp=sharing',
+  },
+  {
+    id: 'aws-data-engineering',
+    title: 'AWS Data Engineering',
+    skills: ['Data engineering', 'AWS'],
+    // The CV's Google Drive document requires sign-in; link to the public CV.
+  },
+  {
+    id: 'aws-natural-language-processing',
+    title: 'AWS Academy Machine Learning for Natural Language Processing',
+    issuer: 'AWS Academy',
+    skills: ['Machine learning', 'Natural language processing'],
+    certificateUrl: 'https://drive.google.com/file/d/1CbhdIsuMvWvug_EHNl4AHZEmrBdXXQfx/view?usp=sharing',
+  },
+  {
+    id: 'advanced-excel',
+    title: 'Advanced Excel',
+    skills: ['Excel'],
+    certificateUrl: 'https://drive.google.com/file/d/1kHyXhXovKtdNGooaCrtSE-zQhepMPvZp/view?usp=sharing',
+  },
+  {
+    id: 'basic-computer',
+    title: 'Basic Computer',
+    skills: ['Computer fundamentals'],
+    certificateUrl: 'https://drive.google.com/file/d/1TUzljr2uX1clzW9lJ8Gdcn25PfPcs2rd/view?usp=sharing',
   },
 ];
 
