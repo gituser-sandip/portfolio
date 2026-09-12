@@ -7,7 +7,7 @@ export const site = {
   email: 'Sandipmeche6@gmail.com',
   phone: '+977 9807944252',
   github: 'https://github.com/gituser-sandip',
-  linkedin: 'https://www.linkedin.com/in/sandeep-meche',
+  linkedin: 'https://www.linkedin.com/in/sandipmeche/',
   resume: '/assets/Sandeep_Meche_CV.pdf',
   location: 'Nepal',
 };
