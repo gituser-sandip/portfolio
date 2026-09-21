@@ -100,7 +100,7 @@ export const projects: Project[] = [
       { label: 'Focus', value: 'Listings', detail: 'property discovery' },
       { label: 'Deploy', value: 'Vercel', detail: 'live production site' },
     ],
-    liveUrl: 'https://realstate-smoky-three.vercel.app',
+    liveUrl: 'https://realstateweb-ten.vercel.app',
     githubUrl: 'https://github.com/gituser-sandip/real_state',
     overview: {
       problem:
