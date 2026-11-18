@@ -64,6 +64,10 @@
     @apply border-t border-line/80;
   }
 
+  .project-card-shine {
+    transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
   .portfolio-atmosphere {
     position: relative;
     isolation: isolate;

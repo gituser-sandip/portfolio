@@ -29,6 +29,7 @@ export function SelectedWorkSection() {
               transition={{ delay: index * 0.05, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               whileHover={shouldReduceMotion ? undefined : { y: -4 }}
             >
+              {!shouldReduceMotion && <span aria-hidden='true' className='project-card-shine pointer-events-none absolute inset-y-0 left-0 z-10 w-1/3 -translate-x-[180%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/[0.07] to-transparent group-hover:translate-x-[480%]' />}
               <div className='grid lg:grid-cols-[minmax(0,1.02fr)_minmax(22rem,0.98fr)]'>
                 <div className='relative min-h-72 overflow-hidden border-b border-line lg:min-h-[31rem] lg:border-b-0 lg:border-r'>
                   <Image
