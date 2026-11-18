@@ -7,16 +7,12 @@
     "dev": "next dev",
     "build": "next build",
     "build:sites": "vite build --config vite.sites.config.ts",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
-    "@microsoft/clarity": "^1.0.2",
     "@upstash/ratelimit": "^2.0.8",
     "@upstash/redis": "^1.38.0",
     "@vercel/analytics": "^2.0.1",
-    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.468.0",
@@ -32,7 +28,6 @@
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
-    "@vitejs/plugin-react": "^6.0.2",
     "@vitejs/plugin-rsc": "^0.5.26",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",

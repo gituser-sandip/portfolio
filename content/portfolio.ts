@@ -340,20 +340,3 @@ export const performanceMetrics = [
   { label: 'SEO', value: 100, suffix: '', description: 'Technical baseline' },
   { label: 'Performance', value: 98, suffix: '', description: 'Mobile-first target' },
 ];
-
-export const testimonials = [
-  {
-    name: 'Your next collaborator',
-    company: 'Client testimonial',
-    quote: 'This space is ready for a concise outcome-led quote about the clarity, speed, and care behind a shipped project.',
-    initials: 'YC',
-    linkedin: '#contact',
-  },
-  {
-    name: 'Your next product partner',
-    company: 'Agency testimonial',
-    quote: 'Use this card for a specific endorsement that connects frontend execution to a stronger user experience or business result.',
-    initials: 'PP',
-    linkedin: '#contact',
-  },
-];
