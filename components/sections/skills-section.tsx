@@ -24,13 +24,14 @@ export function SkillsSection() {
             const Icon = icons[index];
             return (
               <motion.article
-                className='rounded-lg border border-line bg-surface/55 p-6 transition hover:border-red-500/30 hover:bg-surface sm:p-7'
+                className='group relative overflow-hidden rounded-lg border border-line bg-surface/55 p-6 transition hover:border-red-500/30 hover:bg-surface sm:p-7'
                 key={group.title}
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ delay: index * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
+                {!shouldReduceMotion && <span aria-hidden='true' className='project-card-shine pointer-events-none absolute inset-y-0 left-0 z-10 w-1/3 -translate-x-[180%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/[0.07] to-transparent group-hover:translate-x-[480%]' />}
                 <div className='flex items-start justify-between gap-6'>
                   <div>
                     <p className='text-xl font-semibold tracking-tight text-foreground'>{group.title}</p>

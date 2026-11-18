@@ -42,12 +42,13 @@ export function GithubSection() {
         </div>
         <div className='mt-14 grid gap-4 lg:grid-cols-[minmax(0,1.28fr)_minmax(19rem,0.72fr)]'>
           <motion.article
-            className='rounded-lg border border-line bg-surface/55 p-6 sm:p-7'
+            className='group relative overflow-hidden rounded-lg border border-line bg-surface/55 p-6 sm:p-7'
             initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
           >
+            {!shouldReduceMotion && <span aria-hidden='true' className='project-card-shine pointer-events-none absolute inset-y-0 left-0 z-10 w-1/3 -translate-x-[180%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/[0.07] to-transparent group-hover:translate-x-[480%]' />}
             <div className='flex items-start justify-between gap-6'>
               <div>
                 <p className='text-lg font-semibold tracking-tight text-foreground'>Contribution graph</p>
@@ -73,12 +74,13 @@ export function GithubSection() {
             </div>
           </motion.article>
           <motion.article
-            className='rounded-lg border border-line bg-surface/55 p-6 sm:p-7'
+            className='group relative overflow-hidden rounded-lg border border-line bg-surface/55 p-6 sm:p-7'
             initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: 0.08, duration: 0.5 }}
           >
+            {!shouldReduceMotion && <span aria-hidden='true' className='project-card-shine pointer-events-none absolute inset-y-0 left-0 z-10 w-1/3 -translate-x-[180%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/[0.07] to-transparent group-hover:translate-x-[480%]' />}
             <div className='flex items-start justify-between gap-6'>
               <div>
                 <p className='text-lg font-semibold tracking-tight text-foreground'>Open-source focus</p>
@@ -99,7 +101,8 @@ export function GithubSection() {
           </motion.article>
         </div>
         <div className='mt-4 grid gap-4 lg:grid-cols-2'>
-          <article className='rounded-lg border border-line bg-surface/35 p-6 sm:p-7'>
+          <article className='group relative overflow-hidden rounded-lg border border-line bg-surface/35 p-6 sm:p-7'>
+            <span aria-hidden='true' className='project-card-shine pointer-events-none absolute inset-y-0 left-0 z-10 w-1/3 -translate-x-[180%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/[0.07] to-transparent group-hover:translate-x-[480%]' />
             <p className='text-lg font-semibold tracking-tight text-foreground'>Featured repositories</p>
             <div className='mt-6 divide-y divide-line'>
               {githubActivity.repositories.map((repository) => (
@@ -117,7 +120,8 @@ export function GithubSection() {
               ))}
             </div>
           </article>
-          <article className='rounded-lg border border-line bg-surface/35 p-6 sm:p-7'>
+          <article className='group relative overflow-hidden rounded-lg border border-line bg-surface/35 p-6 sm:p-7'>
+            <span aria-hidden='true' className='project-card-shine pointer-events-none absolute inset-y-0 left-0 z-10 w-1/3 -translate-x-[180%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/[0.07] to-transparent group-hover:translate-x-[480%]' />
             <p className='text-lg font-semibold tracking-tight text-foreground'>Recent commits</p>
             <ol className='mt-6 space-y-5'>
               {githubActivity.commits.map((commit, index) => (

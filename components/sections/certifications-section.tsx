@@ -27,15 +27,18 @@ export function CertificationsSection() {
 
             return (
               <motion.li
-                className='flex flex-col rounded-lg border border-line bg-surface/55 p-6 transition-colors hover:border-red-500/30 hover:bg-surface sm:p-7'
+                className='group relative flex flex-col overflow-hidden rounded-lg border border-line bg-surface/55 p-6 transition-colors hover:border-red-500/40 hover:bg-surface sm:p-7'
                 key={certification.id}
                 initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: (index % 2) * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
+                {!shouldReduceMotion && <span aria-hidden='true' className='project-card-shine pointer-events-none absolute inset-y-0 left-0 z-10 w-1/3 -translate-x-[180%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/[0.07] to-transparent group-hover:translate-x-[480%]' />}
+                <span aria-hidden='true' className='absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-red-300/80 via-red-500/40 to-transparent' />
+                <span aria-hidden='true' className='absolute -right-8 -top-8 h-24 w-24 rounded-full bg-amber-400/[0.06] blur-2xl transition group-hover:bg-amber-400/[0.12]' />
                 <div className='flex items-start gap-4'>
-                  <span className='grid h-10 w-10 shrink-0 place-items-center rounded-md border border-red-500/20 bg-red-500/10 text-red-500 dark:text-red-400'>
+                  <span className='grid h-10 w-10 shrink-0 place-items-center rounded-md border border-amber-500/30 bg-amber-500/10 text-amber-600 transition group-hover:border-amber-400/50 group-hover:bg-amber-400/15 dark:text-amber-300'>
                     <Award size={20} strokeWidth={1.7} aria-hidden='true' />
                   </span>
                   <div className='min-w-0'>

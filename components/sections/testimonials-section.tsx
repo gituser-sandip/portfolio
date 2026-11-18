@@ -22,13 +22,14 @@ export function TestimonialsSection() {
         <div className='mt-12 grid gap-4 md:grid-cols-2'>
           {testimonials.map((testimonial, index) => (
             <motion.article
-              className='relative overflow-hidden rounded-lg border border-line bg-surface/55 p-6 sm:p-8'
+              className='group relative overflow-hidden rounded-lg border border-line bg-surface/55 p-6 sm:p-8'
               key={testimonial.company}
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ delay: index * 0.07, duration: 0.5 }}
             >
+              {!shouldReduceMotion && <span aria-hidden='true' className='project-card-shine pointer-events-none absolute inset-y-0 left-0 z-10 w-1/3 -translate-x-[180%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/[0.07] to-transparent group-hover:translate-x-[480%]' />}
               <Quote className='absolute right-6 top-6 text-red-500/20' size={42} strokeWidth={1.25} />
               <p className='max-w-xl text-lg leading-8 text-foreground/90'>"{testimonial.quote}"</p>
               <div className='mt-8 flex items-center justify-between gap-4'>
