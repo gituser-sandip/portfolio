@@ -29,8 +29,8 @@ export const projects: Project[] = [
     eyebrow: 'JavaScript web experience',
     valueProposition: 'A focused web experience built with JavaScript and deployed on Vercel.',
     description: 'A JavaScript web project available as a live Vercel deployment and public GitHub repository.',
-    image: '/images/portfolio.jpg',
-    imageAlt: 'Silence web project preview',
+    image: '/images/silence-project.png',
+    imageAlt: 'Golden Perfume House fragrance website preview',
     stack: ['JavaScript', 'Vercel', 'Web App'],
     metrics: [
       { label: 'Build', value: 'JavaScript', detail: 'web project' },
