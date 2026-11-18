@@ -8,7 +8,6 @@ import { SelectedWorkSection } from '@/components/sections/selected-work-section
 import { SiteFooter } from '@/components/sections/site-footer';
 import { SiteHeader } from '@/components/sections/site-header';
 import { SkillsSection } from '@/components/sections/skills-section';
-import { TestimonialsSection } from '@/components/sections/testimonials-section';
 import { SandeepAi } from '@/components/sections/sandeep-ai';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
 
@@ -26,7 +25,6 @@ export default function HomePage() {
           <CertificationsSection />
           <GithubSection />
           <PerformanceSection />
-          <TestimonialsSection />
           <ContactSection />
         </div>
       </main>

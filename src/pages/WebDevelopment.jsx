@@ -1,7 +1,6 @@
 import Navbar from '../components/Navbar';
 
 const githubProjects = [
-  { icon: 'fa-dumbbell', tag: 'TypeScript + React', title: 'Extra Life GYM', desc: 'A modern gym website built with TypeScript and React, live on Vercel with full responsive design.', tags: ['TypeScript', 'React', 'Vite', 'Vercel'], live: 'https://extra-life-gym.vercel.app', code: 'https://github.com/gituser-sandip/Extra_Life_GYM' },
   { icon: 'fa-building', tag: 'JavaScript + React', title: 'Real State', desc: 'A real estate listing web app with property browsing and details, deployed on Vercel.', tags: ['JavaScript', 'React', 'Vercel', 'Property'], live: 'https://realstateweb-ten.vercel.app', code: 'https://github.com/gituser-sandip/real_state' },
   { icon: 'fa-briefcase', tag: 'TypeScript + React', title: 'Hyder Ali Advisory', desc: 'A professional advisory portfolio website built with TypeScript and React, deployed on Vercel.', tags: ['TypeScript', 'React', 'Vite', 'Vercel'], live: 'https://hyderali-advisory-protfolio.vercel.app', code: 'https://github.com/gituser-sandip/hyderali-advisory-protfolio' },
   { icon: 'fa-clock', tag: 'React + Laravel', title: 'Times', desc: 'A watch-store web project with the tagline "more than time it\'s a statement."', tags: ['JavaScript', 'React', 'Tailwind', 'PHP', 'Laravel'], live: 'https://times-watch-store.vercel.app/', code: 'https://github.com/gituser-sandip/Times' },
